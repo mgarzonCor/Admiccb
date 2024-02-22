@@ -1,0 +1,323 @@
+p,a,h1,h2,h3,h4,h5,h5,label,li{
+    margin: 0;
+    font-size: 20px;
+}
+body{
+    width: 100%;
+    max-width: 1000px;
+    // min-height: 100vh;
+    margin: 0 auto;
+}
+.currentDate{
+    margin-top: 50px;
+}
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    &__logo{
+        width: 200px;
+        height: auto;
+        display: block;
+        &--img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &__desc{
+        text-align: center;
+
+    }
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    &__content{
+        width: 100%;
+        height: 100%;
+        .boxMatricula{
+            width: 100%;
+            &--desc{
+                color: black;
+            }
+            .tableMatricula{
+                width: 600px;
+                margin: 0 auto;
+                margin-top: 10px;
+                &--header{
+                    width: 100%;
+                    height: 30px;
+                    background-color: #ccc;
+                    color: black;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    text-align: center;
+                    .head1{
+                        width: 300px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                        font-weight: 700;
+                    }
+                    .head2{
+                        width: 150px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                        font-weight: 700;
+                    }
+                    .head3{
+                        width: 150px;
+                        height: 100%;
+                        margin: 0;
+                        font-weight: 700;
+                    }
+                }
+                &--body{
+                    width: 100%;
+                    height: 30px;
+                    color: black;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    text-align: center;
+                    .body1{
+                        width: 300px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                    }
+                    .body2{
+                        width: 150px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                    }
+                    .body3{
+                        width: 150px;
+                        height: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .boxAtracciones{
+            width: 100%;
+            margin-top: 30px;
+            .tableAtracciones{
+                width: 700px;
+                margin: 0 auto;
+                margin-top: 10px;
+                &--header{
+                    width: 100%;
+                    height: 30px;
+                    background-color: #ccc;
+                    color: black;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    text-align: center;
+                    .head1{
+                        width: 200px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .head2{
+                        width: 500px;
+                        height: 100%;
+                        margin: 0;
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                &--body{
+                    width: 100%;
+                    height: 100%;
+                    &--single{
+                        width: 100%;
+                        height: 70px;
+                        color: black;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid black;
+                        text-align: center;
+                        .body1{
+                            width: 200px;
+                            height: 100%;
+                            margin: 0;
+                            border-right: 1px solid black;
+                            // font-size: px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: left;
+                            padding: 0 5px;
+                        }
+                        .body2{
+                            width: 500px;
+                            height: 100%;
+                            margin: 0;
+                            font-size: 17px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: left;
+                            padding: 0 5px;
+                        }
+                    }
+                }
+            }
+            &__note{
+                font-style: italic;
+                margin-top: 10px;
+            }
+        }
+
+        .boxPasaportes{
+            width: 100%;
+            margin-top: 30px;
+            .tablePasaportes{
+                width: 500px;
+                margin: 0 auto;
+                margin-top: 10px;
+                &--header{
+                    width: 100%;
+                    height: 30px;
+                    background-color: #ccc;
+                    color: black;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    text-align: center;
+                    .head1{
+                        width: 125px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                        font-weight: 700;
+                    }
+                    .head2{
+                        width: 125px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                        font-weight: 700;
+                    }
+                    .head3{
+                        width: 125px;
+                        height: 100%;
+                        margin: 0;
+                        border-right: 1px solid black;
+                        font-weight: 700;
+                    }
+                    .head4{
+                        width: 125px;
+                        height: 100%;
+                        margin: 0;
+                        font-weight: 700;
+                    }
+                }
+                &--body{
+                    width: 100%;
+                    height: 100%;
+                    &--single{
+                        width: 100%;
+                        height: 30px;
+                        color: black;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid black;
+                        text-align: center;                    
+                        .body1{
+                            width: 125px;
+                            height: 100%;
+                            margin: 0;
+                            border-right: 1px solid black;
+                        }
+                        .body2{
+                            width: 125px;
+                            height: 100%;
+                            margin: 0;
+                            border-right: 1px solid black;
+                        }
+                        .body3{
+                            width: 125px;
+                            height: 100%;
+                            margin: 0;
+                            border-right: 1px solid black;
+                        }
+                        .body4{
+                            width: 125px;
+                            height: 100%;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .boxCombos{
+            width: 100%;
+            margin-top: 30px;
+            .listCombos{
+                width: 100%;
+                padding: 0;
+                margin-top: 15px;
+                &--single{
+                    list-style: none;
+                }
+            }
+        }
+
+        .boxRecomendaciones{
+            width: 100%;
+            margin-top: 30px;
+        }
+        .copyEnd{
+            text-align: center;
+            width: 100%;
+            margin: 50px 0 30px;
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        color: #9b9999;
+        text-transform: capitalize;
+        text-decoration: none;
+        margin: 0;
+        font-size: 13px;
+        line-height: 13px;
+    }
+}

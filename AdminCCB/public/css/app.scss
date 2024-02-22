@@ -1,0 +1,111 @@
+nav{
+    .container-fluid{
+        padding: 0 20px;
+    }
+    .boxLogo{
+        width: 55px;
+        height: 55px;
+        &__img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .textLink{
+        color: #9b9999;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    margin-top: 50px;
+    &__content{
+        width: 100%;
+        min-height: 100%;
+        &--title{
+            font-size: 30px;
+            text-align: center;
+            width: 60%;
+            margin: 0 auto;
+            @media screen and (max-width: 767px) {
+                width: 90%;
+                font-size: 25px;
+            }
+        }
+        .boxDesc{
+            width: 60%;
+            max-width: 600px;
+            min-width: 350px;
+            margin: 60px auto 20px;
+            &--title{
+                text-align: center;
+            }
+        }
+        .boxForm{
+            width: 60%;
+            max-width: 600px;
+            min-width: 300px;
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            &-content{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+                text-align: left;
+                &.track{
+
+                }
+            }
+            &-group{
+                min-width: 200px;
+                max-width: 350px;
+                width: 100%;
+                margin-bottom: 10px;
+                label, input{
+                    width: 100%;
+                }
+            }
+            #canvasTrack{
+                width: 70%;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .msnError{
+                opacity: 0;
+                transition: all ease .5s;
+                &.active{
+                    opacity: 1;
+                }
+
+            }
+            #submit{
+                margin: 20px 0;
+            }
+
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        color: #9b9999;
+        text-transform: capitalize;
+        text-decoration: none;
+        margin: 0;
+        font-size: 13px;
+        line-height: 13px;
+    }
+}

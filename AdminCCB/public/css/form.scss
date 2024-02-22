@@ -1,0 +1,189 @@
+.boxFormInfo{
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    &--left{
+        width: 40%;
+        .boxInfo{
+            width: 100%;
+            &--single{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .desc{
+                    font-weight: 700;
+                }
+                .val{
+                    
+                }
+            }
+        }
+    }
+    &--right{
+        width: 40%;
+        .boxFormulario{
+            width: 100%;
+            &--title{
+                font-weight: 700;
+                text-align: center;
+            }
+            &__content{
+                width: 100%;
+            }
+            &-group{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.boxTipoPasaporte{
+    width: 100%;
+    text-align: center;
+    &--title{
+        font-size: 22px;
+        font-weight: 700;
+    }
+    &--subtitle{
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__solicitud{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 20px 0;
+        .boxInfantil{
+            width: 34%;
+            &__content{
+                width: 200px;
+                margin: 0 auto;
+                &--single{
+                    width: 100%;
+                    border: 1px solid black;
+                    text-align: left;
+                    &:last-child{
+                        background-color: #7ebcf1;
+                        font-weight: 700;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        input{
+                            width: 60px;
+                        }
+                    }
+                }
+            }
+        }
+        .boxAtencion{
+            width: 29%;
+            &--title{
+                font-weight: 700;
+                font-size: 20px;
+            }
+            &--subtitle{
+                font-size: 18px;
+            }
+        }
+        .boxFamiliar{
+            width: 34%;
+            &__content{
+                width: 200px;
+                margin: 0 auto;
+                &--single{
+                    width: 100%;
+                    border: 1px solid black;
+                    text-align: left;
+                    &:last-child{
+                        background-color: #7ebcf1;
+                        font-weight: 700;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        input{
+                            width: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--desc{
+        font-size: 19px;
+        text-align: left;
+        span{
+            font-size: 26px;
+            font-weight: 700;
+        }
+    }
+}
+
+.boxEncuesta{
+    margin-top: 30px;
+    width: 100%;
+    &--title{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .formRadio{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        fieldset{
+            width: 50%;
+        }
+    }
+}
+
+.follow{    
+    margin: 50px 0;
+    float: inline-end;
+}
+
+.err{
+    border-color: red;
+}
+
+.modalvalid{
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000087;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    &.show{
+        opacity: 1;
+    }
+    &-content{
+        width: 350px;
+        min-height: 40px;
+        background: white;
+        border-radius: 10px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        p{
+            margin: 0;
+
+            font-weight: 700;
+        }
+    }
+}
