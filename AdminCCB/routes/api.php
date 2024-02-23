@@ -24,7 +24,7 @@ Route::get('/afiliado', [AfiliadosController::class, 'index']);
 
 Route::get('/afiliado/{matricula}/{codigoCCb}', [AfiliadosController::class, 'buscarPorMatriculaCodigo']);
 
-Route::get('/construirPdf/{mat}/{ccb}/{doc}', [AfiliadosController::class, 'construirPdf']);
+Route::get('/construirPdf/{matricula}/{codigoCCb}/{documento}', [AfiliadosController::class, 'construirPdf']);
 
 Route::post('/guardarInscritos', [AfiliadosController::class, 'store']);
 // Route::get('/guardarInscritos', [AfiliadosController::class, 'guardar']);
