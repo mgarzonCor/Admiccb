@@ -87,6 +87,7 @@ class AfiliadosController extends Controller
     public function construirPdf(Request $request)
     {        
         $afiliado = Afiliados::where('Matricula',$request->Matricula)->where('CodigoCCB',$request->CodigoCCB)->first();
+        $inscritos = Inscritos::where('Documento',$request->Documento)->first();  
         $familairTipo2 = Parametros::where('NOMBRE','like','%Familiar Tipo 2%')->first();
         $infantilTipo1 = Parametros::where('NOMBRE','like','%Infantil Tipo 1%')->first();                                       
         $sql1 = "select p.Nombre as Pasaporte,CASE p.Nombre WHEN 'PASAPORTE KIDS' THEN 21 WHEN 'PASAPORTE SILVER' THEN 28 WHEN 'PASAPORTE GOLD' THEN 33 ELSE 0 END as Atracciones, CONCAT(c.Porcentaje,'%') as Descuento, c.Valor from TB_Convenio conv inner join TB_ConvenioDetalle c on conv.IdConvenio = c.IdConvenio inner join TB_Producto p on c.CodSapProducto=p.CodigoSap where conv.Nombre like '%Descuentos CCB%' and p.Nombre like '%pasaporte%'";
@@ -94,7 +95,7 @@ class AfiliadosController extends Controller
         $pasaportes = DB::select($sql1);
         $combos = DB::select($sql2);
 
-        return response()->json(['status' => true, 'afiliados' => $afiliado, 'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1, 'pasaportes' => $pasaportes, 'combos' => $combos ]);
+        return response()->json(['status' => true, 'afiliados' => $afiliado, 'inscritos' => $inscritos,'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1, 'pasaportes' => $pasaportes, 'combos' => $combos ]);
 
         // $data = [
         //     'titulo' => 'Afiliados'
