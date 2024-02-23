@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+// use AppHttpControllersApiAfiliadosController;
+use App\Http\Controllers\AfiliadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/afiliado', [AfiliadosController::class, 'index']);
+
+Route::get('/afiliado/{matricula}/{codigoCCb}', [AfiliadosController::class, 'buscarPorMatriculaCodigo']);
+
+Route::get('/construirPdf', [AfiliadosController::class, 'construirPdf']);
+
+Route::post('/guardarInscritos', [AfiliadosController::class, 'guardarInscritos']);

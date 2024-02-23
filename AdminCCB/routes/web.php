@@ -16,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 Route::get('/pdf', function () {
     return view('pdf');
 });
 Route::get('/form', function () {
     return view('formRegister');
 });
+=======
+
+Route::get('afiliado/index', [AfiliadosController::class, 'index']);
+>>>>>>> aec0858f2f0f8f7a968578c72ecbb38b23d5625f
