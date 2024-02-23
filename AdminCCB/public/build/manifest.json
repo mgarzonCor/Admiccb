@@ -1,0 +1,32 @@
+{
+  "public/css/app.scss": {
+    "file": "assets/app-BSI89zBS.css",
+    "src": "public/css/app.scss",
+    "isEntry": true
+  },
+  "public/css/form.scss": {
+    "file": "assets/form-04cDmWzW.css",
+    "src": "public/css/form.scss",
+    "isEntry": true
+  },
+  "public/css/pdf.scss": {
+    "file": "assets/pdf-CERHHu7F.css",
+    "src": "public/css/pdf.scss",
+    "isEntry": true
+  },
+  "public/js/app.js": {
+    "file": "assets/app-Bh_IceJy.js",
+    "src": "public/js/app.js",
+    "isEntry": true
+  },
+  "public/js/form.js": {
+    "file": "assets/form-CT8ZCyJB.js",
+    "src": "public/js/form.js",
+    "isEntry": true
+  },
+  "public/js/pdf.js": {
+    "file": "assets/pdf-DCo-Qdhi.js",
+    "src": "public/js/pdf.js",
+    "isEntry": true
+  }
+}
