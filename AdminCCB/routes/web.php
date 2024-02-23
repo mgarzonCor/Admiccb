@@ -23,4 +23,4 @@ Route::get('/form', function () {
     return view('formRegister');
 });
 
-Route::get('afiliado/index', [AfiliadosController::class, 'index']);
+// Route::get('afiliado/index', [AfiliadosController::class, 'index']);
