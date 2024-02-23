@@ -1,4 +1,3 @@
-import './bootstrap';
 
 let textoAleatorio;
 
@@ -46,8 +45,15 @@ function valid() {
         codMat = document.querySelector('#matricula'),
         codC = document.querySelector('#CCB'),
         msn = document.querySelector('.msnError'),
-        inputs = document.querySelectorAll('.inputValidate')
+        inputs = document.querySelectorAll('.inputValidate'),
+        modal = document.querySelector('.modalRegister'),
+        modalBtn = document.querySelector('.modalRegister__content--btn');
         
+        modalBtn && modalBtn.addEventListener('click',e=>{
+
+            window.location.reload()
+        })
+
     inputs.forEach(function(input) {
         input.addEventListener('input', function(event) {
             var valorInput = input.value;
@@ -67,8 +73,8 @@ function valid() {
         e.preventDefault()
         if(codMat.value == "" || codC.value == "" || codTrack.value == ""){
             action('Los campos con (*) son obligatorios',true)
-        }else if(codMat.value.length < 15 || codC.value.length < 15 ){
-            action('Los campos de matricula y codigo deben tener 15 caracteres',true)
+        }else if(codMat.value.length > 15 || codC.value.length > 15 ){
+            action('Los campos de matricula y codigo deben ser de maximo 15 caracteres',true)
 
         }else if(codTrack.value.length < 8){            
             action('El campo de código de seguridad debe tener 8 caracteres',true)
@@ -76,7 +82,22 @@ function valid() {
             console.log(codTrack.value, textoAleatorio)        
             action('Código de seguridad incorrecto',false)
         }else{
-            alert('todo bien')
+            submit.setAttribute('disabled','true')
+            fetch(`/api/afiliado/${codMat.value}/${codC.value}`)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                if(json.afiliados === "No se encontró ningún registro con esos parámetros") modal.classList.add('show')
+                if(json.status){
+                    localStorage.setItem('5baa61e4', codMat.value);
+                    localStorage.setItem('7f83b1657ff1fc53', codC.value);
+                    window.location.href = '/form'
+                }
+            })
+            .catch(error => {
+                // Manejar cualquier error que ocurra durante la solicitud
+                console.error('Error:', error);
+            });
         }
     })
 
@@ -90,6 +111,6 @@ function valid() {
                     location.reload();
                 }, 2000);
             }
-        }, 3000);
+        }, 3500);
     }
 }

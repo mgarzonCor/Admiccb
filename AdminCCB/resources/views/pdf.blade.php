@@ -9,12 +9,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="css/libraries/bootstrap.min.css">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        {{-- Para produccion --}}
-        {{-- <link rel="stylesheet" rel="stylesheet" type="text/css" href="build/assets/app-BHQtBAWD.css"> --}}
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/pdf-CERHHu7F.css">
+        
 
 
         {{-- Para desarrollo --}}
-        @vite(['public/css/pdf.scss','public/js/pdf.js'])
+        {{-- @vite(['public/css/pdf.scss','public/js/pdf.js']) --}}
 
         
     </head>
@@ -45,16 +45,16 @@
                             <p class="head3">Cédula</p>
                         </div>
                         <div class="tableMatricula--body">
-                            <p class="body1">2972167</p>
-                            <p class="body2">AFI14698</p>
-                            <p class="body3">132132112345</p>
+                            <p class="body1 setmat">2972167</p>
+                            <p class="body2 setccb">AFI14698</p>
+                            <p class="body3 setdoc">132132112345</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="boxAtracciones">
                     <p class="boxAtracciones--title"><strong>Atracciones por tipo de pasaporte:</strong></p>
-                    <p class="boxAtracciones--subtitle">Por renovar tu matrícula mercantil recibes <span>10</span> pasaportes gratis así:</p>
+                    <p class="boxAtracciones--subtitle">Por renovar tu matrícula mercantil recibes <span class="cantPassText">-</span> pasaportes gratis así:</p>
 
                     <div class="tableAtracciones">
                         <div class="tableAtracciones--header">
@@ -95,18 +95,6 @@
                                 <p class="body3"><span>40</span>%</p>
                                 <p class="body4">$ <span>33.000</span></p>
                             </div>
-                            <div class="tablePasaportes--body--single">
-                                <p class="body1">SILVER</p>
-                                <p class="body2">28</p>
-                                <p class="body3"><span>30</span>%</p>
-                                <p class="body4">$ <span>45.500</span></p>
-                            </div>
-                            <div class="tablePasaportes--body--single">
-                                <p class="body1">GOLD</p>
-                                <p class="body2">33</p>
-                                <p class="body3"><span>20</span>%</p>
-                                <p class="body4">$ <span>60.000</span></p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,21 +111,27 @@
                 <div class="boxRecomendaciones">
                     <p class="boxRecomendaciones--title"><strong>Otras recomendaciones:</strong></p>
 
-                    <ol class="boxRecomendaciones__list">
-                        <li class="boxRecomendaciones__list--single">Los pasaportes CCB gratis NO aplican para agencias, sucursales ni establecimientos de comercio, únicamente aplican para personas naturales y jurídicas.</li>
-                        <li class="boxRecomendaciones__list--single">Es indispensable que todas las personas que van a hacer uso de los pasaportes se presenten al tiempo en la taquilla. Por lo tanto, los pasaportes no podrán ser usados en fechas diferentes al día de la redención.</li>
-                        <li class="boxRecomendaciones__list--single">Los pasaportes se podrán redimir en los horarios de operación del parque hasta dos horas antes del cierre al público. Consultar horarios en www.mundoaventura.com.co</li>
-                        <li class="boxRecomendaciones__list--single">Este beneficio no es acumulable con otras promociones y descuentos, ni canjeable por dinero en efectivo.</li>
-                        <li class="boxRecomendaciones__list--single">Aplican todas las normas de seguridad y convivencia del parque, incluidas aquellas que exigen para el ingreso a las atracciones tener cierta estatura o no presentar ciertas condiciones de salud (la estatura mínima para usar al menos una atracción es de 70 cm).</li>
-                      </ol>
+                    <ul class="boxRecomendaciones__list">
+                        <li class="boxRecomendaciones__list--single">1. Los pasaportes CCB gratis NO aplican para agencias, sucursales ni establecimientos de comercio, únicamente aplican para personas naturales y jurídicas.</li>
+                        <li class="boxRecomendaciones__list--single">2. Es indispensable que todas las personas que van a hacer uso de los pasaportes se presenten al tiempo en la taquilla. Por lo tanto, los pasaportes no podrán ser usados en fechas diferentes al día de la redención.</li>
+                        <li class="boxRecomendaciones__list--single">3. Los pasaportes se podrán redimir en los horarios de operación del parque hasta dos horas antes del cierre al público. Consultar horarios en www.mundoaventura.com.co</li>
+                        <li class="boxRecomendaciones__list--single">4. Este beneficio no es acumulable con otras promociones y descuentos, ni canjeable por dinero en efectivo.</li>
+                        <li class="boxRecomendaciones__list--single">5. Aplican todas las normas de seguridad y convivencia del parque, incluidas aquellas que exigen para el ingreso a las atracciones tener cierta estatura o no presentar ciertas condiciones de salud (la estatura mínima para usar al menos una atracción es de 70 cm).</li>
+                      </ul>
                 </div>
 
                 <p class="copyEnd"><strong>¡Mundo Aventura Mucho Más que Diversión!</strong></p>
             </div>
+
+            <div id="qrcode"></div>
+            
             
         </main>
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+    <script src="/build/assets/pdf-DuwgyTcq.js"></script>
+
 </html>

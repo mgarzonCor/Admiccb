@@ -20,13 +20,13 @@
                 <div class="boxForm-group ">
                     <label for="matricula" class="col-sm-2 col-form-label-sm">* Ingrese su número de matricula o inscripcion</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control inputValidate" id="matricula" value=""  minlength="15" maxlength="15" >
+                        <input type="text" class="form-control inputValidate" id="matricula" value="" maxlength="15" >
                     </div>
                 </div>
                 <div class="boxForm-group ">
                     <label for="CCB" class="col-sm-2 col-form-label-sm">* Ingrese el Código CCB</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control inputValidate" id="CCB" value="" minlength="15" maxlength="15">
+                        <input type="text" class="form-control inputValidate" id="CCB" value="" maxlength="15">
                     </div>
                 </div>
             </div>
@@ -45,8 +45,28 @@
             <span class="msnError text-danger"><strong>Los campos con (*) son obligatorios</strong></span>
             <br>
 
-            <button id="submit" type="button" class="btn btn-outline-success">Enviar</button>
+            <button id="submit" type="button" class="btn btn-success">Enviar</button>
         </div>
     </div>
     
+    <div class="modalRegister">
+        <div class="modalRegister__content">
+            <p class="modalRegister__content--title">Se registro no se encuentra en nuestra base de datos</p>
+            <div class="boxInfo">
+                <p class="boxInfo--desc">Por favor verifique que:</p>
+                <ul class="boxInfo--items">
+                    <li>El número de matrícula o inscripción no tenga puntos, comas ni ceros a la izquierda.</li>
+                    <li>Haya transcurrido <strong>cinco (5) días habiles</strong> de haber realizado el pago de la renovacion de su matrícula o inscripción para que pueda acceder a la plataforma de Mundo Aventura.</li>
+                </ul>
+
+                <p class="boxInfo--note"><strong>Importante: </strong>Los pasaportes CCB gratos <strong>NO aplican para agencias, sucursales ni establecimiento de comercio</strong>, únicamente aplican para personas naturales y jurídicas.</p>
+            </div>
+            <p class="modalRegister__content--desc">Si tiene inconvenientes con la solicitud de sus pasaportes CCB, por favor escribenosal correo electronico <a href="mailto:judy.roso@ccb.org.co">judy.roso@ccb.org.co</a> relacionando el nombre de su empres y NIT.</p>
+
+            <p class="modalRegister__content--thanks"><strong>¡Gracias por su visita!</strong></p>
+
+            <button type="button" class="btn btn-success  modalRegister__content--btn">Continuar</button>
+        </div>
+    </div>
+
 @endsection

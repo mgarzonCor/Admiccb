@@ -1,27 +1,30 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @extends('layouts.app')
-@vite(['public/js/form.js'])
+{{-- @vite(['public/js/form.js']) --}}
 
 @section('content')
-    
     <div class="container__content">
         <div class="boxFormInfo">
             <div class="boxFormInfo--left">
                 <div class="boxInfo">
                     <div class="boxInfo--single">
                         <p class="desc">Número de matrícula o inscripción:</p>
-                        <p class="val">$$$$</p>
+                        <p class="val nm">-</p>
                     </div>
                     <div class="boxInfo--single">
                         <p class="desc">Código CCB:</p>
-                        <p class="val">$$$$</p>
+                        <p class="val cc">-</p>
                     </div>
                     <div class="boxInfo--single">
                         <p class="desc">Razón Social:</p>
-                        <p class="val">Michael Alejandro Garzon Urquijo</p>
+                        <p class="val rs">-</p>
                     </div>
                     <div class="boxInfo--single">
                         <p class="desc">Cantidad de pasaportes que podrá disfrutar:</p>
-                        <p class="val" id="pass">8</p>
+                        <p class="val cp" id="pass">-</p>
+                    </div>
+                    <div class="boxInfo--single" style="display: none">
+                        <p class="val ixi" id="ixi">-</p>
                     </div>
                 </div>
             </div>
@@ -72,17 +75,8 @@
             <div class="boxTipoPasaporte__solicitud">
                 <div class="boxInfantil">
                     <div class="boxInfantil__content">                        
-                        <div class="boxInfantil__content--single"><strong>CCB Infatil 2019</strong></div>
-                        <div class="boxInfantil__content--single">Carrusel</div>
-                        <div class="boxInfantil__content--single">Dragon Fly</div>
-                        <div class="boxInfantil__content--single">La Granja</div>
-                        <div class="boxInfantil__content--single">Paseo de Piratas</div>
-                        <div class="boxInfantil__content--single">Soft Play</div>
-                        <div class="boxInfantil__content--single">Tacitas de té</div>
-                        <div class="boxInfantil__content--single">Tortugas</div>
-                        <div class="boxInfantil__content--single">Tren rio grande</div>
-                        <div class="boxInfantil__content--single">Bus Loco</div>
-                        <div class="boxInfantil__content--single">Via Panamericana</div>
+                        <div class="boxInfantil__content--single"><strong>-</strong></div>
+                        <div class="boxInfantil__content--single">-</div>
                         <div class="boxInfantil__content--single">Cant. pasaporte <input type="number" class="valAprovNum valid2" id="passInf"></div>
                     </div>
                 </div>
@@ -92,15 +86,8 @@
                 </div>
                 <div class="boxFamiliar">
                     <div class="boxFamiliar__content">
-                        <div class="boxFamiliar__content--single"><strong>CCB Familiar 2019</strong></div>
-                        <div class="boxFamiliar__content--single">Carrusel</div>
-                        <div class="boxFamiliar__content--single">Dragon Fly</div>
-                        <div class="boxFamiliar__content--single">Ikaro</div>
-                        <div class="boxFamiliar__content--single">La Granja</div>
-                        <div class="boxFamiliar__content--single">Magic Bikes</div>
-                        <div class="boxFamiliar__content--single">Monasterio Inclinado</div>
-                        <div class="boxFamiliar__content--single">Tacitas de té</div>
-                        <div class="boxFamiliar__content--single">Tropicana</div>
+                        <div class="boxFamiliar__content--single"><strong>-</strong></div>
+                        <div class="boxFamiliar__content--single">-</div>
                         <div class="boxFamiliar__content--single">Cant. pasaporte <input type="number" class="valAprovNum valid2" id="passFam"></div>
                     </div>
                 </div>
@@ -118,25 +105,25 @@
                 <fieldset class="form-group">
                     <h5 class="mt-4">* 1 ¿Los pasaportes CCB seran utilizados por?</h5>
                     <div class="form-check">
-                        <input class="form-check-input" name="first" type="radio" value="" id="first1">
+                        <input class="form-check-input" name="first" type="radio" value="RL" id="first1">
                         <label class="form-check-label" for="first1">
                             Representante Legal
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="first" type="radio" value="" id="first2">
+                        <input class="form-check-input" name="first" type="radio" value="AOF" id="first2">
                         <label class="form-check-label" for="first2">
                             Amigo o Familiar
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="first" type="radio" value="" id="first3">
+                        <input class="form-check-input" name="first" type="radio" value="EMP" id="first3">
                         <label class="form-check-label" for="first3">
                             Empleado
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="first" type="radio" value="" id="first4">
+                        <input class="form-check-input" name="first" type="radio" value="OTRO" id="first4">
                         <label class="form-check-label" for="first4">
                             Otro
                         </label>
@@ -145,25 +132,25 @@
                 <fieldset class="form-group">
                     <h5 class="mt-4">* 2 ¿Como está compuesto su hogar?</h5>
                     <div class="form-check">
-                        <input class="form-check-input" name="second" type="radio" value="" id="second1">
+                        <input class="form-check-input" name="second" type="radio" value="VS" id="second1">
                         <label class="form-check-label" for="second1">
                             Vive Solo(a)
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="second" type="radio" value="" id="second2">
+                        <input class="form-check-input" name="second" type="radio" value="PAR" id="second2">
                         <label class="form-check-label" for="second2">
                             Pareja
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="second" type="radio" value="" id="second3">
+                        <input class="form-check-input" name="second" type="radio" value="HJS" id="second3">
                         <label class="form-check-label" for="second3">
                             Hijos
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="second" type="radio" value="" id="second4">
+                        <input class="form-check-input" name="second" type="radio" value="P+H" id="second4">
                         <label class="form-check-label" for="second4">
                             Pareja + Hijos
                         </label>
@@ -177,8 +164,9 @@
 
     <div class="modalvalid">
         <div class="modalvalid-content">
-            <p class="text-danger msnModal">Modal body text goes here.</p>
+            <p class="text-danger msnModal">--</p>
         </div>
     </div>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/build/assets/form-CT8ZCyJB.js"></script>   
 @endsection

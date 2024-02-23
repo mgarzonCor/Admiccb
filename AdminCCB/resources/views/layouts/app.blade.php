@@ -10,11 +10,12 @@
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="css/libraries/bootstrap.min.css">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         {{-- Para produccion --}}
-        {{-- <link rel="stylesheet" rel="stylesheet" type="text/css" href="build/assets/app-BHQtBAWD.css"> --}}
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/app-BSI89zBS.css">
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/form-04cDmWzW.css">
 
 
         {{-- Para desarrollo --}}
-        @vite(['public/css/app.scss', 'public/css/form.scss', 'public/js/app.js'])
+        {{-- @vite(['public/css/app.scss', 'public/css/form.scss', 'public/js/app.js']) --}}
 
         
     </head>
@@ -41,6 +42,6 @@
         </footer>
 
         {{-- Para produccion --}}
-        {{-- <script src="build/assets/app-CxBHU0wK.js"></script> --}}
+        <script src="/build/assets/app-Bh_IceJy.js"></script>
     </body>
 </html>

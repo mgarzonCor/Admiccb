@@ -109,3 +109,48 @@ footer{
         line-height: 13px;
     }
 }
+
+.modalRegister{
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000087;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
+    &.show{
+        opacity: 1;
+        pointer-events: all;
+    }
+    &__content{
+        width: 800px;
+        min-height: 40px;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        &--title{
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .boxInfo{
+            width: 85%;
+            margin: 0 auto;
+            text-align: left;
+        }
+        &--desc{
+            text-align: left;
+        }
+        &--thanks{
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+    }
+}

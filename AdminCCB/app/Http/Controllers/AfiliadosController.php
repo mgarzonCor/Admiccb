@@ -23,7 +23,7 @@ class AfiliadosController extends Controller
             $infantilTipo1 = Parametros::where('NOMBRE','like','%Infantil Tipo 1%')->first(); 
             
             if($afiliado == null){
-                return response()->json(['status' => true, 'afiliados' => 'No se encontró ningún registro con esos parámetros']);
+                return response()->json(['status' => false, 'afiliados' => 'No se encontró ningún registro con esos parámetros']);
             }
            
             return response()->json(['status' => true, 'afiliados' => $afiliado, 'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1]);
@@ -34,10 +34,12 @@ class AfiliadosController extends Controller
     }
 
     public function store(Request $request){
+
+        // return $request->Nombre;
         try {
             if ($request != null){
 
-                $inscritos = Inscritos::where('Documento',$request->Documento)->first();               
+                $inscritos = Inscritos::where('Documento','=',$request->Documento)->first();               
                 
                 if ($inscritos == null){
                     //Guardar inscruitos
@@ -49,7 +51,7 @@ class AfiliadosController extends Controller
                 $inscritos->Id_Afiliados = $request->Id_Afiliados;
                 $inscritos->CantidadFamiliar = $request->CantidadFamiliar;
                 $inscritos->CantidadInfantil = $request->CantidadInfantil;
-                $inscritos->Nombre = $request->Nombre;
+                $inscritos->Nombre = $request->test;
                 $inscritos->Documento = $request->Documento;
                 $inscritos->Matricula = $request->Matricula;
                 $inscritos->Celular = $request->Celular;
@@ -84,10 +86,10 @@ class AfiliadosController extends Controller
         // return response()->json(['status' => true, 'inscritos' => $inscritos, 'encuestas' => $encuestas]);
     }
 
-    public function construirPdf(Request $request)
+    public function construirPdf($mat, $ccb, $doc)
     {        
-        $afiliado = Afiliados::where('Matricula',$request->Matricula)->where('CodigoCCB',$request->CodigoCCB)->first();
-        $inscritos = Inscritos::where('Documento',$request->Documento)->first();  
+        $afiliado = Afiliados::where('Matricula',$mat)->where('CodigoCCB',$ccb)->first();
+        $inscritos = Inscritos::where('Documento',$doc)->first();  
         $familairTipo2 = Parametros::where('NOMBRE','like','%Familiar Tipo 2%')->first();
         $infantilTipo1 = Parametros::where('NOMBRE','like','%Infantil Tipo 1%')->first();                                       
         $sql1 = "select p.Nombre as Pasaporte,CASE p.Nombre WHEN 'PASAPORTE KIDS' THEN 21 WHEN 'PASAPORTE SILVER' THEN 28 WHEN 'PASAPORTE GOLD' THEN 33 ELSE 0 END as Atracciones, CONCAT(c.Porcentaje,'%') as Descuento, c.Valor from TB_Convenio conv inner join TB_ConvenioDetalle c on conv.IdConvenio = c.IdConvenio inner join TB_Producto p on c.CodSapProducto=p.CodigoSap where conv.Nombre like '%Descuentos CCB%' and p.Nombre like '%pasaporte%'";
