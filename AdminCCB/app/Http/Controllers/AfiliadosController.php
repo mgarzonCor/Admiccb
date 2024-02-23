@@ -33,42 +33,55 @@ class AfiliadosController extends Controller
         }
     }
 
-    public function guardarInscritos(Request $request){
+    public function store(Request $request){
+        try {
+            if ($request != null){
 
-        dd($request);
+                $inscritos = Inscritos::where('Documento',$request->Documento)->first();               
+                
+                if ($inscritos == null){
+                    //Guardar inscruitos
+                    $inscritos = new Inscritos();     
+                    $inscritos->FechaCreacion = date("Y-m-d H:i:s");               
+
+                }
+
+                $inscritos->Id_Afiliados = $request->Id_Afiliados;
+                $inscritos->CantidadFamiliar = $request->CantidadFamiliar;
+                $inscritos->CantidadInfantil = $request->CantidadInfantil;
+                $inscritos->Nombre = $request->Nombre;
+                $inscritos->Documento = $request->Documento;
+                $inscritos->Matricula = $request->Matricula;
+                $inscritos->Celular = $request->Celular;
+                $inscritos->Email = $request->Email;
+                $inscritos->CodigoRedencion = $request->CodigoRedencion;                
+                $inscritos->save();
+
+                
+                //Guardar encuestas
+                $encuestas = new Encuestas();
+                $encuestas->IdInscritos = $inscritos->IdInscritos;
+                $encuestas->Utilidad = $request->Utilidad;
+                $encuestas->Hogar = $request->Hogar;
+                $encuestas->save();
+
+
+                //Guardar registros
+                $registros = new Registros();
+                // $registros->IdRedimidos = 0;
+                $registros->Inscritos = $inscritos->IdInscritos;
+                $registros->Fecha = date("Y-m-d H:i:s");
+                $registros->IdAfiliado = $request->Id_Afiliados;
+                $registros->save();
+
+                return response()->json(['message' => 'Registro creado correctamente'], 201);               
+           }       
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Erro en el registro'], 500);
+        }
+       
         
-        if ($request != null){
-             //Guardar inscruitos
-            $inscritos = new Inscritos();
-            $inscritos->Id_Afiliados = $request->Id_Afiliados;
-            $inscritos->CantidadFamiliar = $request->CantidadFamiliar;
-            $inscritos->CantidadInfantil = $request->CantidadInfantil;
-            $inscritos->Nombre = $request->Nombre;
-            $inscritos->Documento = $request->Documento;
-            $inscritos->Matricula = $request->Matricula;
-            $inscritos->Celular = $request->Celular;
-            $inscritos->Email = $request->Email;
-            $inscritos->CodigoRedencion = $request->CodigoRedencion;
-            $inscritos->FechaCreacion = date("Y-m-d H:i:s");
-            $inscritos->save();
-
-            //Guardar encuestas
-            $encuestas = new Encuestas();
-            $encuestas->IdInscritos = $inscritos->IdInscritos;
-            $encuestas->Utilidad = $request->Utilidad;
-            $encuestas->Hogar = $request->Hogar;
-            $encuestas->save();
-
-            //Guardar registros
-            $registros = new Registros();
-            $registros->IdRedimidos = 0;
-            $registros->Inscritos = $inscritos->IdInscritos;
-            $registros->Fecha = date("Y-m-d H:i:s");
-            $registros->IdAfiliado = $request->Id_Afiliados;
-            $registros->save();
-        }       
-
-        return response()->json(['status' => true, 'inscritos' => $inscritos, 'encuestas' => $encuestas]);
+        // return response()->json(['status' => true, 'inscritos' => $inscritos, 'encuestas' => $encuestas]);
     }
 
     public function construirPdf(Request $request)
@@ -86,12 +99,12 @@ class AfiliadosController extends Controller
         // $data = [
         //     'titulo' => 'Afiliados'
         // ];
-        // // $pdf = \PDF::loadView('welcome', $data);
+        // // $pdf = \PDF::loadView('pdf', $data);
         // // return $pdf->download('archivo.pdf');       
         // // $datos = Datos::find($id);
 
         // //Descargar pdf de la vista
-        // $pdf =  \PDF::loadView('welcome', $data )
+        // $pdf =  \PDF::loadView('pdf', $data )
         //          ->setPaper('letter', 'portrait');
         //         // ->stream('informe.pdf');
 
