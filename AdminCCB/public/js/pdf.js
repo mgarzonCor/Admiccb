@@ -1,7 +1,5 @@
 import './bootstrap';
 
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
     getData()
     date()
@@ -16,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // Configura las opciones para la generación del PDF
         const options = {
         margin: 5,
-        filename: 'pqaqgina_completa.pdf',
+        filename: `${ced}.pdf`,
         image: { type: 'jpeg', quality: 0.8 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'mm', format: 'letter', orientation: 'p' }
@@ -25,15 +23,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // Genera el PDF con html2pdf
         html2pdf(pageElement, options);
 
-
         // const pdf = new jsPDF('html', 'pt', 'a4');
         // const ced = localStorage.getItem('5baa61e4werg')
         // pdf.addHTML(document.body, function() {
         //     pdf.save(`${ced}.pdf`);
         // });
-        // localStorage.removeItem('5baa61e4')
-        // localStorage.removeItem('7f83b1657ff1fc53')
-        // localStorage.removeItem('5baa61e4werg')
+        localStorage.removeItem('5baa61e4')
+        localStorage.removeItem('7f83b1657ff1fc53')
+        localStorage.removeItem('5baa61e4werg')
     }, 1500);
 
 

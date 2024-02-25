@@ -40,6 +40,6 @@
             <p>C O R P A R Q U E S 2024</p>
         </footer>
 
-        <script src="/build/assets/app-Bh_IceJy.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>
