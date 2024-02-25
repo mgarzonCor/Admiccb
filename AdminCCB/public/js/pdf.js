@@ -7,14 +7,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
     date()
     
     setTimeout(() => {
-        const pdf = new jsPDF('html', 'pt', 'a4');
-        const ced = localStorage.getItem('5baa61e4werg')
-        pdf.addHTML(document.body, function() {
-            pdf.save(`${ced}.pdf`);
-        });
-        localStorage.removeItem('5baa61e4')
-        localStorage.removeItem('7f83b1657ff1fc53')
-        localStorage.removeItem('5baa61e4werg')
+        // Captura de la página con html2canvas
+        // Importa la librería html2pdf
+
+        // Obtén el elemento que representa toda la página (puede ser 'body' o cualquier otro contenedor principal)
+        const pageElement = document.body;
+
+        // Configura las opciones para la generación del PDF
+        const options = {
+        margin: 5,
+        filename: 'pqaqgina_completa.pdf',
+        image: { type: 'jpeg', quality: 0.8 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'letter', orientation: 'p' }
+        };
+
+        // Genera el PDF con html2pdf
+        html2pdf(pageElement, options);
+
+
+        // const pdf = new jsPDF('html', 'pt', 'a4');
+        // const ced = localStorage.getItem('5baa61e4werg')
+        // pdf.addHTML(document.body, function() {
+        //     pdf.save(`${ced}.pdf`);
+        // });
+        // localStorage.removeItem('5baa61e4')
+        // localStorage.removeItem('7f83b1657ff1fc53')
+        // localStorage.removeItem('5baa61e4werg')
     }, 1500);
 
 
@@ -80,12 +99,14 @@ function getData(){
             tabPass.innerHTML = ''
             valPass.forEach(el => {
                 const splitPass = el.Pasaporte.split(' ');
+                const setCOP = el.Valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                console.log(setCOP)
                 tabPass.innerHTML += `
                     <div class="tablePasaportes--body--single">
                         <p class="body1">${splitPass[1]}     </p>
                         <p class="body2">${el.Atracciones}</p>
                         <p class="body3">${el.Descuento}</p>
-                        <p class="body4">$ ${el.Valor}</p>
+                        <p class="body4">$ ${setCOP}</p>
                     </div>
                 `
             })

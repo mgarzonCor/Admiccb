@@ -9,12 +9,11 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="css/libraries/bootstrap.min.css">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        {{-- Para produccion --}}
+        {{--  --}}
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/app-BSI89zBS.css">
-        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/form-04cDmWzW.css">
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/form-BA042f5t.css">
 
 
-        {{-- Para desarrollo --}}
         {{-- @vite(['public/css/app.scss', 'public/css/form.scss', 'public/js/app.js']) --}}
 
         
@@ -41,7 +40,6 @@
             <p>C O R P A R Q U E S 2024</p>
         </footer>
 
-        {{-- Para produccion --}}
         <script src="/build/assets/app-Bh_IceJy.js"></script>
     </body>
 </html>

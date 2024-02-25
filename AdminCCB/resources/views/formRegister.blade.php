@@ -42,13 +42,13 @@
                         <div class="boxFormulario-group ">
                             <label for="cedula" class="col-sm-6 col-form-label-sm">* Cédula</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm valid1 valAprovNum" id="cedula" value=""  >
+                                <input type="text" class="form-control form-control-sm valid1 valAprovNum" id="cedula" value=""  maxlength="20">
                             </div>
                         </div>
                         <div class="boxFormulario-group ">
                             <label for="telefono" class="col-sm-6 col-form-label-sm">* Teléfono</label>
                             <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm valid1 valAprovNum" id="telefono" value=""  >
+                                <input type="number" class="form-control form-control-sm valid1 valAprovNum" id="telefono" value=""  maxlength="10">
                             </div>
                         </div>
                         <div class="boxFormulario-group ">
