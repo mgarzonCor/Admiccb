@@ -8,21 +8,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 function valid() {
-    console.log('ente')
     const submit = document.querySelector('#follow'),
     name = document.querySelector('#nombre'),
     ced = document.querySelector('#cedula'),
     phone = document.querySelector('#telefono'),
     mail = document.querySelector('#email'),
     cofMail = document.querySelector('#confemail'),
-        inputsText = document.querySelectorAll('.valAprovText'),
-        inputsNum = document.querySelectorAll('.valAprovNum'),
-        passRadio = document.querySelectorAll('input[name="first"'),
-        passHogar = document.querySelectorAll('input[name="second"');
-        let flagData = false,
-        flagPass = false,
-        flagRadio = false;
-        console.log('ente', submit)
+    inputsText = document.querySelectorAll('.valAprovText'),
+    inputsNum = document.querySelectorAll('.valAprovNum'),
+    passRadio = document.querySelectorAll('input[name="first"'),
+    passHogar = document.querySelectorAll('input[name="second"'),
+    tyc = document.querySelector('#tyc');
+
+    let flagData = false,
+    flagPass = false,
+    flagRadio = false,
+    flagCheck = false;
 
     // Validacion que solo pueda ingresar texto
     inputsText.forEach(function(input) {
@@ -56,6 +57,7 @@ function valid() {
         flagData = false,
         flagPass = false,
         flagRadio = false;
+        flagCheck = false;
 
         const valid1 = document.querySelectorAll('.valid1'),
             valid2 = document.querySelectorAll('.valid2'),
@@ -123,8 +125,16 @@ function valid() {
             modal('Los campos con (*) son obligatorios')
         }
 
+        //Validacion Checkbox tyc
+        // if(!tyc.checked){
+        //     modal('Por favor aceptar términos y condiciones')
+        // }else{
+        //     flagCheck = true;
+
+        // }
+
         //Se valida si todo los campos estan correctamente diligenciados
-        if(flagData && flagPass && flagRadio){
+        if(flagData && flagPass && flagRadio ){
             //Todo bien
             const cot = nmG.innerText+ccG.innerHTML
             submit.setAttribute('disabled','true')

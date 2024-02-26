@@ -5,7 +5,7 @@ p,a,h1,h2,h3,h4,h5,h5,label,li{
         font-size: 18px;
     }
     @media screen and (max-width: 767px) {
-        font-size: 15px;
+        font-size: 12px;
     }
 }
 ol, ul {
@@ -21,7 +21,7 @@ body{
     }
 }
 .currentDate{
-    margin-top: 30px;
+    // margin-top: 30px;
 }
 .nav{
     width: 100%;
@@ -30,7 +30,7 @@ body{
     flex-wrap: nowrap;
     align-items: center;
     &__logo{
-        width: 200px;
+        width: 100px;
         height: auto;
         display: block;
         &--img{
@@ -121,6 +121,9 @@ body{
                     align-items: center;
                     border: 1px solid black;
                     text-align: center;
+                    @media screen and (max-width: 767px) {
+                        height: 20px;
+                    }
                     .body1{
                         width: 300px;
                         height: 100%;
@@ -152,7 +155,7 @@ body{
         }
         .boxAtracciones{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 15px;
             .tableAtracciones{
                 width: 700px;
                 margin: 0 auto;
@@ -218,6 +221,9 @@ body{
                         align-items: center;
                         border: 1px solid black;
                         text-align: center;
+                        @media screen and (max-width: 767px) {
+                            height: 50px;
+                        }
                         .body1{
                             width: 200px;
                             height: 100%;
@@ -266,7 +272,7 @@ body{
 
         .boxPasaportes{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 15px;
             .tablePasaportes{
                 width: 500px;
                 margin: 0 auto;
@@ -285,6 +291,9 @@ body{
                     align-items: center;
                     border: 1px solid black;
                     text-align: center;
+                    @media screen and (max-width: 767px) {
+                        height: 20px;
+                    }                    
                     .head1{
                         width: 125px;
                         height: 100%;
@@ -337,7 +346,10 @@ body{
                         justify-content: center;
                         align-items: center;
                         border: 1px solid black;
-                        text-align: center;                    
+                        text-align: center;    
+                        @media screen and (max-width: 767px) {
+                            height: 20px;
+                        }                
                         .body1{
                             width: 125px;
                             height: 100%;
@@ -380,7 +392,7 @@ body{
 
         .boxCombos{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 15px;
             .listCombos{
                 width: 100%;
                 padding: 0;
@@ -393,7 +405,7 @@ body{
 
         .boxRecomendaciones{
             width: 100%;
-            margin-top: 30px;
+            margin-top: 15px;
             li{
                 list-style: none;
             }
@@ -401,7 +413,7 @@ body{
         .copyEnd{
             text-align: center;
             width: 100%;
-            margin: 50px 0 30px;
+            margin: 15px 0;
         }
     }
 }
@@ -411,7 +423,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 }
 
 footer{

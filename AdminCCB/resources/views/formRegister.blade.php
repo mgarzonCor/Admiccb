@@ -157,6 +157,16 @@
                     </div>
                 </fieldset>
             </div>
+            {{-- <div class="formCheck">
+                <fieldset class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" name="tyc" type="checkbox" value="" id="tyc">
+                        <label class="form-check-label" for="tyc">
+                            Acepta <a class="tycLink" href="#" target="_blank">términos y condiciones</a>
+                        </label>
+                    </div>
+                </fieldset>
+            </div> --}}
         </div>
 
         <button type="button" id="follow" class="btn btn-success follow">Aceptar y continuar</button>

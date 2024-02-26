@@ -1,36 +1,41 @@
-// import './bootstrap';
+let resolution = window.innerWidth;
 
 document.addEventListener("DOMContentLoaded", (event) => {
     getData()
     date()
     
     setTimeout(() => {
-        // Captura de la página con html2canvas
-        // Importa la librería html2pdf
-
-        // Obtén el elemento que representa toda la página (puede ser 'body' o cualquier otro contenedor principal)
-        // const pageElement = document.body;
-
-        // // Configura las opciones para la generación del PDF
-        // const options = {
-        // margin: 5,
-        // filename: `${ced}.pdf`,
-        // image: { type: 'jpeg', quality: 0.8 },
-        // html2canvas: { scale: 2 },
-        // jsPDF: { unit: 'mm', format: 'letter', orientation: 'p' }
-        // };
-
-        // Genera el PDF con html2pdf
-        // html2pdf(pageElement, options);
-
-        const pdf = new jsPDF('html', 'pt', 'letter');
         const ced = localStorage.getItem('5baa61e4werg')
-        pdf.addHTML(document.body, function() {
-            pdf.save(`${ced}.pdf`);
-        });
+        const pageElement = document.body;
+
+        if( resolution <= 767){
+            // // Configura las opciones para la generación del PDF
+            const options = {
+                filename: 'test1.pdf', // Nombre del archivo PDF
+                image: { type: 'jpeg', quality: 0.98 }, // Tipo de imagen y calidad
+                html2canvas: { scale: 2 }, // Escala del lienzo HTML2Canvas
+                jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait'}, // Configuración de jsPDF
+                // pagebreak: { mode: 'avoid-all', avoid: 'img' }
+            };
+    
+            // // Genera el PDF con html2pdf
+            html2pdf().set(options).from(pageElement).save()
+        }else{
+            
+            const pdf = new jsPDF('p', 'mm', 'letter', true, true, 1, 2.0);
+            pdf.addHTML(document.body, function() {
+                pdf.save(`${ced}.pdf`);
+            });
+        }
+
+
+        
+        // console.log(canvas.width)
+        // console.log(document.body, document.html, document)
         // localStorage.removeItem('5baa61e4')
         // localStorage.removeItem('7f83b1657ff1fc53')
         // localStorage.removeItem('5baa61e4werg')
+
     }, 1500);
 
 
@@ -104,7 +109,6 @@ function getData(){
             valPass.forEach(el => {
                 const splitPass = el.Pasaporte.split(' ');
                 const setCOP = el.Valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                console.log(setCOP)
                 tabPass.innerHTML += `
                     <div class="tablePasaportes--body--single">
                         <p class="body1">${splitPass[1]}     </p>
@@ -129,19 +133,24 @@ function getData(){
 
             var qrcodeContainer = document.getElementById('qrcode');
             const setCat = valAf.Matricula+valAf.CodigoCCB
-            console.log(setCat);
 
             // Crear una instancia de QRCode.js y generar el código QR
+            let widthWR = 100
+            let heightWR = 100
+            if( resolution <= 767){
+                widthWR = 80
+                heightWR = 80
+            }    
             var qrcode = new QRCode(qrcodeContainer, {
                 text: setCat, // El texto que deseas codificar en el código QR
-                width: 100, // Ancho del código QR
-                height: 100, // Altura del código QR
+                width : widthWR, // Ancho del código QR
+                height: heightWR, // Altura del código QR
                 colorDark : '#000000', // Color de los módulos oscuros
                 colorLight : '#ffffff', // Color de los módulos claros
                 correctLevel : QRCode.CorrectLevel.H// Nivel de corrección de errores
             });
 
-            console.log(json);
+            // console.log(json);
         })
     }else{
         window.location.href = '/'
