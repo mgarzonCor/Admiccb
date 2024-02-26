@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if( resolution <= 767){
             // // Configura las opciones para la generación del PDF
             const options = {
-                filename: 'test1.pdf', // Nombre del archivo PDF
+                filename: `${ced}.pdf`, // Nombre del archivo PDF
                 image: { type: 'jpeg', quality: 0.98 }, // Tipo de imagen y calidad
                 html2canvas: { scale: 2 }, // Escala del lienzo HTML2Canvas
                 jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait'}, // Configuración de jsPDF
@@ -86,7 +86,8 @@ function getData(){
             setccb.innerHTML = valAf.CodigoCCB
             setdoc.innerHTML = valIns.Documento
             cantPassText.innerHTML = valAf.CantidadPasaportes
-            if(valAf.Afiliado){
+
+            if(valAf.Afiliado == 0){
                 navDesc.innerHTML = `FELICITACIONES Sr(a) empresario (a)`
             }else{
                 navDesc.innerHTML = `¡FELICITACIONES!
