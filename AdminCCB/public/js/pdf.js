@@ -87,7 +87,7 @@ function getData(){
             setdoc.innerHTML = valIns.Documento
             cantPassText.innerHTML = valAf.CantidadPasaportes
             if(valAf.Afiliado){
-                navDesc.innerHTML = `FELICITACIONES Sr(a) empresario (a)`
+                navDesc.innerHTML = `FELICITACIONES Sr (a) Afiliado(a)`
             }else{
                 navDesc.innerHTML = `¡FELICITACIONES!
                 <span><br>REGISTRO PROCESADO CON ÉXITO</span>`

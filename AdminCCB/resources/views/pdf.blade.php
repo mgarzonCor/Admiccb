@@ -28,7 +28,7 @@
             </a>  
             <h5 class="nav__desc"></h5>   
             <a class="nav__logo" href="https://www.ccb.org.co/" target="_blank">
-                <img class="nav__logo--img" src="/img/logoCCB1.png" alt="">
+                <img class="nav__logo--img" src="/img/CCBLogo.png" alt="">
             </a>
         </div>
         <main class="container">    

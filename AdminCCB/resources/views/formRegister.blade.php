@@ -71,7 +71,7 @@
         <div class="boxTipoPasaporte">
             <p class="boxTipoPasaporte--title">Escoja los tipos de pasaporte que quiere disfrutar</p>
             <p class="boxTipoPasaporte--subtitle">Por favor indique en cada una de las casillas, la cantidad de pasaportes CCB infantil y/o familiar que desea redimir:
-                <br>(Recuerde que la suma total de los pasaportes no peude exceder la cantidad asignada).
+                <br>(Recuerde que la suma total de los pasaportes no puede exceder la cantidad asignada).
             <div class="boxTipoPasaporte__solicitud">
                 <div class="boxInfantil">
                     <div class="boxInfantil__content">                        
