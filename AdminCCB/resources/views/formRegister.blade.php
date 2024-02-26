@@ -48,7 +48,7 @@
                         <div class="boxFormulario-group ">
                             <label for="telefono" class="col-sm-6 col-form-label-sm">* Teléfono</label>
                             <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm valid1 valAprovNum" id="telefono" value=""  maxlength="10">
+                                <input type="text" class="form-control form-control-sm valid1 valAprovNum" id="telefono" value=""  maxlength="10">
                             </div>
                         </div>
                         <div class="boxFormulario-group ">
@@ -94,7 +94,7 @@
             </div>
 
             <p class="boxTipoPasaporte--desc"><span>Nota:</span> Es necesario que la cantidad de pasaportes en cada tipo sume el número de pasaportes a los cualesusted tiene derecho
-            p un menor valor, de lo contrario no podra procesar su solicitud.</p>
+            a un menor valor, de lo contrario no podra procesar su solicitud.</p>
 
 
         </div>
@@ -103,7 +103,7 @@
             <p class="boxEncuesta--title">Conteste la siguiente encuesta:</p>
             <div class="formRadio">
                 <fieldset class="form-group">
-                    <h5 class="mt-4">* 1 ¿Los pasaportes CCB seran utilizados por?</h5>
+                    <h5 class="mt-4">* 1 ¿Los pasaportes CCB serán utilizados por?</h5>
                     <div class="form-check">
                         <input class="form-check-input" name="first" type="radio" value="RL" id="first1">
                         <label class="form-check-label" for="first1">

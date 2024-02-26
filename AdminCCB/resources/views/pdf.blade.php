@@ -26,10 +26,7 @@
             <a class="nav__logo" href="https://www.mundoaventura.com.co/" target="_blank">
                 <img class="nav__logo--img" src="/img/logoMA.png" alt="">
             </a>  
-            <h5 class="nav__desc">
-                ¡FELICITACIONES!
-                <span><br>REGISTRO PROCESADO CON ÉXITO</span>
-            </h5>   
+            <h5 class="nav__desc"></h5>   
             <a class="nav__logo" href="https://www.ccb.org.co/" target="_blank">
                 <img class="nav__logo--img" src="/img/logoCCB1.png" alt="">
             </a>
@@ -45,9 +42,9 @@
                             <p class="head3">Cédula</p>
                         </div>
                         <div class="tableMatricula--body">
-                            <p class="body1 setmat">2972167</p>
-                            <p class="body2 setccb">AFI14698</p>
-                            <p class="body3 setdoc">132132112345</p>
+                            <p class="body1 setmat">--</p>
+                            <p class="body2 setccb">--</p>
+                            <p class="body3 setdoc">--</p>
                         </div>
                     </div>
                 </div>
@@ -74,8 +71,8 @@
                             </div>
                         </div>
                     </div>
-                    <p class="boxAtracciones__note">(Las atracciones podrán cambiar sin previo aviso y serán reemplazadas por similares)</p>
-                    <p class="boxAtracciones__date">Fechas de redención: En los horarios habituales del parque a partir del 01 de marzo al 7 de junio de 2024</p>
+                    <p class="boxAtracciones__note" style="font-style: normal;">(Las atracciones podrán cambiar sin previo aviso y serán reemplazadas por similares)</p>
+                    <p class="boxAtracciones__date"><strong>Fechas de redención:</strong> En los horarios habituales del parque a partir de marzo hasta el 7 de junio de 2024</p>
                 </div>
 
                 <div class="boxPasaportes">
@@ -129,7 +126,9 @@
         </main>
     </body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script> --}}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
     <script src="/js/pdf.js"></script>
 

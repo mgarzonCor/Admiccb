@@ -1,4 +1,4 @@
-import './bootstrap';
+// import './bootstrap';
 
 document.addEventListener("DOMContentLoaded", (event) => {
     getData()
@@ -9,28 +9,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // Importa la librería html2pdf
 
         // Obtén el elemento que representa toda la página (puede ser 'body' o cualquier otro contenedor principal)
-        const pageElement = document.body;
+        // const pageElement = document.body;
 
-        // Configura las opciones para la generación del PDF
-        const options = {
-        margin: 5,
-        filename: `${ced}.pdf`,
-        image: { type: 'jpeg', quality: 0.8 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'letter', orientation: 'p' }
-        };
+        // // Configura las opciones para la generación del PDF
+        // const options = {
+        // margin: 5,
+        // filename: `${ced}.pdf`,
+        // image: { type: 'jpeg', quality: 0.8 },
+        // html2canvas: { scale: 2 },
+        // jsPDF: { unit: 'mm', format: 'letter', orientation: 'p' }
+        // };
 
         // Genera el PDF con html2pdf
-        html2pdf(pageElement, options);
+        // html2pdf(pageElement, options);
 
-        // const pdf = new jsPDF('html', 'pt', 'a4');
-        // const ced = localStorage.getItem('5baa61e4werg')
-        // pdf.addHTML(document.body, function() {
-        //     pdf.save(`${ced}.pdf`);
-        // });
-        localStorage.removeItem('5baa61e4')
-        localStorage.removeItem('7f83b1657ff1fc53')
-        localStorage.removeItem('5baa61e4werg')
+        const pdf = new jsPDF('html', 'pt', 'letter');
+        const ced = localStorage.getItem('5baa61e4werg')
+        pdf.addHTML(document.body, function() {
+            pdf.save(`${ced}.pdf`);
+        });
+        // localStorage.removeItem('5baa61e4')
+        // localStorage.removeItem('7f83b1657ff1fc53')
+        // localStorage.removeItem('5baa61e4werg')
     }, 1500);
 
 
@@ -63,7 +63,8 @@ function getData(){
         tabAtra = document.querySelector('.tableAtracciones--body'),
         tabPass = document.querySelector('.tablePasaportes--body'),
         listComb = document.querySelector('.listCombos'),
-        cantPassText = document.querySelector('.cantPassText')
+        cantPassText = document.querySelector('.cantPassText'),
+        navDesc = document.querySelector('.nav__desc')
 
     if(mat && ccb && doc){
         fetch(`/api/construirPdf/${mat}/${ccb}/${doc}`)
@@ -80,6 +81,12 @@ function getData(){
             setccb.innerHTML = valAf.CodigoCCB
             setdoc.innerHTML = valIns.Documento
             cantPassText.innerHTML = valAf.CantidadPasaportes
+            if(valAf.Afiliado){
+                navDesc.innerHTML = `FELICITACIONES Sr(a) empresario (a)`
+            }else{
+                navDesc.innerHTML = `¡FELICITACIONES!
+                <span><br>REGISTRO PROCESADO CON ÉXITO</span>`
+            }
             
             tabAtra.innerHTML = ''
             tabAtra.innerHTML += `
