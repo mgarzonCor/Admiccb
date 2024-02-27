@@ -24,11 +24,11 @@
 
         <div class="nav">
             <a class="nav__logo" href="https://www.mundoaventura.com.co/" target="_blank">
-                <img class="nav__logo--img" src="/img/logoMA.png" alt="">
+                <img class="nav__logo--img" src="/img/logoMA.png" alt="Logo Parque Mundo Aventura">
             </a>  
             <h5 class="nav__desc"></h5>   
             <a class="nav__logo" href="https://www.ccb.org.co/" target="_blank">
-                <img class="nav__logo--img" src="/img/CCBLogo.png" alt="">
+                <img class="nav__logo--img" src="/img/CCBLogo.png" alt="Logo Cámara de Comercio de Bogotá">
             </a>
         </div>
         <main class="container">    

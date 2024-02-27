@@ -22,13 +22,13 @@
         <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="boxLogo" href="https://www.ccb.org.co/" target="_blank">
-                    <img class="boxLogo__img" src="/img/CCBLogo.png" alt="">
+                    <img class="boxLogo__img" src="/img/CCBLogo.png" alt="Logo Cámara de Comercio de Bogotá">
                 </a>
 
                 <a class="textLink" href="https://www.mundoaventura.com.co" target="_blank">Ir a mundo aventura</a>
 
                 <a class="boxLogo" href="https://www.mundoaventura.com.co/" target="_blank">
-                    <img class="boxLogo__img" src="/img/logoMA.png" alt="">
+                    <img class="boxLogo__img" src="/img/logoMA.png" alt="Logo Parque Mundo Aventura">
                 </a>     
             </div>
         </nav>
