@@ -20,18 +20,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
             // // Genera el PDF con html2pdf
             html2pdf().set(options).from(pageElement).save()
-        }else{
-            
-            const pdf = new jsPDF('p', 'mm', 'letter', true, true, 1, 2.0);
-            pdf.addHTML(document.body, function() {
-                pdf.save(`${ced}.pdf`);
+        }else{      
+            const { jsPDF } = window.jspdf;
+            html2canvas(document.body, {
+                onrendered: function(canvas) {                 
+                    var pdfData = canvas.toDataURL("image/png");                
+                    var doc = new jsPDF("p", "mm", "letter");
+                    var width = doc.internal.pageSize.getWidth();
+                    var height = doc.internal.pageSize.getHeight();
+                    doc.addImage(pdfData, 'PNG', 0, 0, width, height);
+                    doc.save('te1st1.pdf');
+                    console.log('PDF generated successfully.');
+                }            
             });
         }
-
-
         
-        // console.log(canvas.width)
-        // console.log(document.body, document.html, document)
         // localStorage.removeItem('5baa61e4')
         // localStorage.removeItem('7f83b1657ff1fc53')
         // localStorage.removeItem('5baa61e4werg')
@@ -119,17 +122,17 @@ function getData(){
                 `
             })
 
-            listComb.innerHTML = ''
-            valCom.forEach(el => {
-                let desc = '';
-                if(el.Descuento != '0%') {
-                    desc = '('+el.Descuento +' de descuento):'
-                }
+            // listComb.innerHTML = ''
+            // valCom.forEach(el => {
+            //     let desc = '';
+            //     if(el.Descuento != '0%') {
+            //         desc = '('+el.Descuento +' de descuento):'
+            //     }
 
-                listComb.innerHTML += `
-                    <li class="listCombos--single"><strong>${el.Pasaporte} ${desc}</strong> ${el.Valor ? '' : el.Valor}</li>
-                `
-            })
+            //     listComb.innerHTML += `
+            //         <li class="listCombos--single"><strong>${el.Pasaporte} ${desc}</strong> ${el.Valor ? '' : el.Valor}</li>
+            //     `
+            // })
 
             var qrcodeContainer = document.getElementById('qrcode');
             const setCat = valAf.Matricula+valAf.CodigoCCB

@@ -9,7 +9,7 @@
         <div class="boxDesc">
             <h4 class="boxDesc--title">Recuerde que:</h2>
             <ul class="boxDesc__list">
-                <li class="boxDesc__list--item">El plazo de redención es desde <strong><span>marzo hasta el 7 de junio de 2024.</span></strong></li>
+                <li class="boxDesc__list--item">El plazo de redención es desde el<strong><span>09 de marzo hasta el 7 de junio de 2024.</span></strong></li>
                 <li class="boxDesc__list--item">Al diligenciar el siguiente formulario, solicite una sola vez su beneficio.</li>
                 <li class="boxDesc__list--item">Recuerde que el día de la visita al parque, deben presentarse todas las personas que van a redimir el beneficio.</li>
             </ul>

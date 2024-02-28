@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="css/libraries/bootstrap.min.css">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/pdf-CX7MIqgD.css">
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/pdf-bUkn9eB1.css">
         
 
 
@@ -32,7 +32,7 @@
             </a>
         </div>
         <main class="container">    
-            <div class="container__content">
+            <div class="container__content" style="margin-bottom: 30px">
                 <div class="boxMatricula">
                     <p class="boxMatricula--desc">Imprima este documento y preséntelo directamente en las taquillas de redención frente al CC Plaza de las Américas.</p>
                     <div class="tableMatricula">
@@ -72,11 +72,11 @@
                         </div>
                     </div>
                     <p class="boxAtracciones__note" style="font-style: normal;">(Las atracciones podrán cambiar sin previo aviso y serán reemplazadas por similares)</p>
-                    <p class="boxAtracciones__date"><strong>Fechas de redención:</strong> En los horarios habituales del parque a partir de marzo hasta el 7 de junio de 2024</p>
+                    <p class="boxAtracciones__date"><strong>Fechas de redención:</strong> En los horarios habituales del parque a partir del 09 de marzo hasta el 7 de junio de 2024</p>
                 </div>
 
                 <div class="boxPasaportes">
-                    <p class="boxPasaportes--title"><strong>Conozca más beneficios a los que también puede acceder:</strong></p>
+                    {{-- <p class="boxPasaportes--title"><strong>Conozca más beneficios a los que también puede acceder:</strong></p> --}}
                     <p class="boxPasaportes--subtitle">Obtenga más atracciones mejorando sus pasaportes CCB con los siguientes descuentos:</p>
                     <div class="tablePasaportes">
                         <div class="tablePasaportes--header">
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 
-                <div class="boxCombos">
+                <div class="boxCombos" style="display: none;">
                     <p class="boxCombos--title"><strong>Descuentos en combos de alimentos y bebidas:</strong></p>
                     <p class="boxCombos--subtitle">Presentando su certificado de matrícula o inscripción en los kioscos al interior del parque Mundo Aventura puede adquirir los siguientes combos con espectaculares descuentos:</p>
                     <ul class="listCombos">
@@ -128,9 +128,15 @@
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
     <script src="/js/pdf.js"></script>
+    <script>
+        
+            
+    </script>
 
 </html>

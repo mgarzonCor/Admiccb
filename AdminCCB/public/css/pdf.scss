@@ -13,7 +13,7 @@ ol, ul {
 }
 body{
     width: 100%;
-    max-width: 1000px;
+    max-width: 90%;
     // min-height: 100vh;
     margin: 0 auto;
     @media screen and (max-width: 1000px) {
@@ -49,9 +49,7 @@ body{
     width: 100%;
     min-height: 100vh;
     position: relative;
-    @media screen and (max-width: 1000px) {
-        max-width: 100%;
-    }
+    max-width: 100%;
     &__content{
         width: 100%;
         height: 100%;
@@ -61,11 +59,11 @@ body{
                 color: black;
             }
             .tableMatricula{
-                width: 600px;
+                // width: 600px;
+                width: 80%;
                 margin: 0 auto;
                 margin-top: 10px;
                 @media screen and (max-width: 767px) {
-                    width: 100%;
                 }
                 &--header{
                     width: 100%;
@@ -79,34 +77,34 @@ body{
                     border: 1px solid black;
                     text-align: center;
                     .head1{
-                        width: 300px;
+                        // width: 300px;
+                        width: 33%;
                         height: 100%;
                         margin: 0;
                         border-right: 1px solid black;
                         font-weight: 700;
                         @media screen and (max-width: 767px) {
-                            width: 33%;
                             font-size:10px;
                         }
                     }
                     .head2{
-                        width: 150px;
+                        // width: 150px;
                         height: 100%;
+                        width: 33%;
                         margin: 0;
                         border-right: 1px solid black;
                         font-weight: 700;
                         @media screen and (max-width: 767px) {
-                            width: 33%;
                             font-size:10px;
                         }
                     }
                     .head3{
-                        width: 150px;
+                        // width: 150px;
                         height: 100%;
+                        width: 33%;
                         margin: 0;
                         font-weight: 700;
                         @media screen and (max-width: 767px) {
-                            width: 33%;
                             font-size:10px;
                         }
                     }
@@ -126,28 +124,28 @@ body{
                     }
                     .body1{
                         width: 300px;
-                        height: 100%;
+                        // height: 100%;
+                        width: 33%;
                         margin: 0;
                         border-right: 1px solid black;
                         @media screen and (max-width: 767px) {
-                            width: 33%;
                         }
                     }
                     .body2{
                         width: 150px;
-                        height: 100%;
+                        // height: 100%;
+                        width: 33%;
                         margin: 0;
                         border-right: 1px solid black;
                         @media screen and (max-width: 767px) {
-                            width: 33%;
                         }
                     }
                     .body3{
-                        width: 150px;
+                        // width: 150px;
+                        width: 33%;
                         height: 100%;
                         margin: 0;
                         @media screen and (max-width: 767px) {
-                            width: 33%;
                         }
                     }
                 }
@@ -157,11 +155,11 @@ body{
             width: 100%;
             margin-top: 15px;
             .tableAtracciones{
-                width: 700px;
+                // width: 700px;
+                width: 90%;
                 margin: 0 auto;
                 margin-top: 10px;
                 @media screen and (max-width: 1000px) {
-                    width: 95%;
                 }                
                 &--header{
                     width: 100%;
@@ -175,7 +173,8 @@ body{
                     border: 1px solid black;
                     text-align: center;
                     .head1{
-                        width: 200px;
+                        // width: 200px;
+                        width: 30%;
                         height: 100%;
                         margin: 0;
                         border-right: 1px solid black;
@@ -184,7 +183,6 @@ body{
                         align-items: center;
                         justify-content: center;
                         @media screen and (max-width: 1000px) {
-                            width: 30%;
                             font-size: 15px;
                         }
                         @media screen and (max-width: 767px) {
@@ -192,7 +190,8 @@ body{
                         }
                     }
                     .head2{
-                        width: 500px;
+                        // width: 500px;
+                        width: 70%;
                         height: 100%;
                         margin: 0;
                         font-weight: 700;
@@ -200,7 +199,6 @@ body{
                         align-items: center;
                         justify-content: center;
                         @media screen and (max-width: 1000px) {
-                            width: 70%;
                             font-size: 15px;
                         }
                         @media screen and (max-width: 767px) {
@@ -213,7 +211,7 @@ body{
                     height: 100%;
                     &--single{
                         width: 100%;
-                        height: 70px;
+                        height: 60px;
                         color: black;
                         display: flex;
                         flex-wrap: nowrap;
@@ -225,7 +223,8 @@ body{
                             height: 50px;
                         }
                         .body1{
-                            width: 200px;
+                            // width: 200px;
+                            width: 30%;
                             height: 100%;
                             margin: 0;
                             border-right: 1px solid black;
@@ -236,7 +235,6 @@ body{
                             text-align: left;
                             padding: 0 5px;
                             @media screen and (max-width: 1000px) {
-                                width: 30%;
                                 font-size: 15px;
                             }
                             @media screen and (max-width: 767px) {
@@ -244,7 +242,8 @@ body{
                             }
                         }
                         .body2{
-                            width: 500px;
+                            // width: 500px;
+                            width: 70%;
                             height: 100%;
                             margin: 0;
                             font-size: 17px;
@@ -254,7 +253,6 @@ body{
                             text-align: left;
                             padding: 0 5px;
                             @media screen and (max-width: 1000px) {
-                                width: 70%;
                                 font-size: 15px;
                             }
                             @media screen and (max-width: 767px) {
@@ -274,11 +272,11 @@ body{
             width: 100%;
             margin-top: 15px;
             .tablePasaportes{
-                width: 500px;
+                // width: 500px;
+                width: 88%;
                 margin: 0 auto;
                 margin-top: 10px;
                 @media screen and (max-width: 767px) {
-                    width: 100%;
                 }
                 &--header{
                     width: 100%;
@@ -296,41 +294,41 @@ body{
                     }                    
                     .head1{
                         width: 125px;
-                        height: 100%;
+                        // height: 100%;
+                        width: 25%;
                         margin: 0;
                         border-right: 1px solid black;
                         font-weight: 700;
                         @media screen and (max-width: 767px) {
-                            width: 25%;
                         }
                     }
                     .head2{
                         width: 125px;
-                        height: 100%;
+                        // height: 100%;
+                        width: 25%;
                         margin: 0;
                         border-right: 1px solid black;
                         font-weight: 700;
                         @media screen and (max-width: 767px) {
-                            width: 25%;
                         }
                     }
                     .head3{
                         width: 125px;
-                        height: 100%;
+                        // height: 100%;
+                        width: 25%;
                         margin: 0;
                         border-right: 1px solid black;
                         font-weight: 700;
                             @media screen and (max-width: 767px) {
-                                width: 25%;
                             }
                     }
                     .head4{
-                        width: 125px;
+                        // width: 125px;
+                        width: 25%;
                         height: 100%;
                         margin: 0;
                         font-weight: 700;
                             @media screen and (max-width: 767px) {
-                                width: 25%;
                             }
                     }
                 }
@@ -352,37 +350,37 @@ body{
                         }                
                         .body1{
                             width: 125px;
-                            height: 100%;
+                            // height: 100%;
+                            width: 25%;
                             margin: 0;
                             border-right: 1px solid black;
                             @media screen and (max-width: 767px) {
-                                width: 25%;
                             }
                         }
                         .body2{
                             width: 125px;
-                            height: 100%;
+                            // height: 100%;
+                            width: 25%;
                             margin: 0;
                             border-right: 1px solid black;
                             @media screen and (max-width: 767px) {
-                                width: 25%;
                             }
                         }
                         .body3{
                             width: 125px;
-                            height: 100%;
+                            // height: 100%;
+                            width: 25%;
                             margin: 0;
                             border-right: 1px solid black;
                             @media screen and (max-width: 767px) {
-                                width: 25%;
                             }
                         }
                         .body4{
-                            width: 125px;
+                            // width: 125px;
+                            width: 25%;
                             height: 100%;
                             margin: 0;
                             @media screen and (max-width: 767px) {
-                                width: 25%;
                             }
                         }
                     }
@@ -424,6 +422,16 @@ body{
     align-items: center;
     justify-content: center;
     // margin-bottom: 50px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+        width: 80px;
+        height: 80px;
+    }
+    img{
+        object-fit: contain;
+    }
 }
 
 footer{
