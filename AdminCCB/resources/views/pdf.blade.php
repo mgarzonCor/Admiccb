@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="css/libraries/bootstrap.min.css">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/pdf-bUkn9eB1.css">
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/pdf-DzPEFXpd.css">
         
 
 
@@ -96,13 +96,14 @@
                     </div>
                 </div>
                 
-                <div class="boxCombos" style="display: none;">
+                <div class="boxCombos">
                     <p class="boxCombos--title"><strong>Descuentos en combos de alimentos y bebidas:</strong></p>
                     <p class="boxCombos--subtitle">Presentando su certificado de matrícula o inscripción en los kioscos al interior del parque Mundo Aventura puede adquirir los siguientes combos con espectaculares descuentos:</p>
                     <ul class="listCombos">
                         <li class="listCombos--single"><strong>Combo perro + gaseosa 7 onz</strong></li>
                         <li class="listCombos--single"><strong>Combo pizza familiar: 6 porciones de pizza + 6 gaseosas 7 onzas </strong></li>
                     </ul>
+                    <p class="boxCombos__afiliados"><strong>Pregunta al taquillero por el 2x1 en nuestras atracciones de alto impacto.</strong></p>
                 </div>
 
                 <div class="boxRecomendaciones">

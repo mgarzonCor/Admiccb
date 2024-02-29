@@ -399,6 +399,12 @@ body{
                     list-style: none;
                 }
             }
+            &__afiliados{
+                display: none;
+                &.active{
+                    display: block;
+                }
+            }
         }
 
         .boxRecomendaciones{
@@ -417,19 +423,20 @@ body{
 }
 
 #qrcode{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // margin-bottom: 50px;
-    width: 100px;
+    width: 110px;
     height: 100px;
     margin: 0 auto;
+    canvas{
+        width: 100%;
+        height: 100%;
+    }
     @media screen and (max-width: 767px) {
         width: 80px;
         height: 80px;
     }
     img{
+        width: 100%;
+        height: 100%;
         object-fit: contain;
     }
 }

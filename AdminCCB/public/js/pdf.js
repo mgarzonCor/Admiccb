@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     var doc = new jsPDF("p", "mm", "letter");
                     var width = doc.internal.pageSize.getWidth();
                     var height = doc.internal.pageSize.getHeight();
-                    doc.addImage(pdfData, 'PNG', 0, 0, width, height);
-                    doc.save('te1st1.pdf');
+                    doc.addImage(pdfData, 'JPEG', 0, 0, width, height);
+                    doc.save(`${ced}.pdf`);
                     console.log('PDF generated successfully.');
                 }            
             });
@@ -72,7 +72,8 @@ function getData(){
         tabPass = document.querySelector('.tablePasaportes--body'),
         listComb = document.querySelector('.listCombos'),
         cantPassText = document.querySelector('.cantPassText'),
-        navDesc = document.querySelector('.nav__desc')
+        navDesc = document.querySelector('.nav__desc'),
+        msnAfiliado = document.querySelector('.boxCombos__afiliados')
 
     if(mat && ccb && doc){
         fetch(`/api/construirPdf/${mat}/${ccb}/${doc}`)
@@ -91,6 +92,7 @@ function getData(){
             cantPassText.innerHTML = valAf.CantidadPasaportes
             if(valAf.Afiliado){
                 navDesc.innerHTML = `FELICITACIONES Sr (a) Afiliado(a)`
+                msnAfiliado.classList.add('active')
             }else{
                 navDesc.innerHTML = `¡FELICITACIONES!
                 <span><br>REGISTRO PROCESADO CON ÉXITO</span>`
@@ -122,17 +124,17 @@ function getData(){
                 `
             })
 
-            // listComb.innerHTML = ''
-            // valCom.forEach(el => {
-            //     let desc = '';
-            //     if(el.Descuento != '0%') {
-            //         desc = '('+el.Descuento +' de descuento):'
-            //     }
+            listComb.innerHTML = ''
+            valCom.forEach(el => {
+                let desc = '';
+                if(el.Descuento != '0%') {
+                    desc = '('+el.Descuento +' de descuento):'
+                }
 
-            //     listComb.innerHTML += `
-            //         <li class="listCombos--single"><strong>${el.Pasaporte} ${desc}</strong> ${el.Valor ? '' : el.Valor}</li>
-            //     `
-            // })
+                listComb.innerHTML += `
+                    <li class="listCombos--single"><strong>${el.Pasaporte} ${desc}</strong> ${el.Valor ? '' : el.Valor}</li>
+                `
+            })
 
             var qrcodeContainer = document.getElementById('qrcode');
             const setCat = valAf.Matricula+valAf.CodigoCCB
