@@ -26,5 +26,10 @@ Route::get('/afiliado/{matricula}/{codigoCCb}', [AfiliadosController::class, 'bu
 
 Route::get('/construirPdf/{matricula}/{codigoCCb}/{documento}', [AfiliadosController::class, 'construirPdf']);
 
+Route::get('/datatableAfiliados', [AfiliadosController::class, 'GetAfiliados']);
+
 Route::post('/guardarInscritos', [AfiliadosController::class, 'store']);
+
+Route::post('/uploadFile', [AfiliadosController::class, 'update']);
+
 // Route::get('/guardarInscritos', [AfiliadosController::class, 'guardar']);

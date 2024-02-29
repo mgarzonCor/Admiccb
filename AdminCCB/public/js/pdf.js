@@ -90,12 +90,11 @@ function getData(){
             setccb.innerHTML = valAf.CodigoCCB
             setdoc.innerHTML = valIns.Documento
             cantPassText.innerHTML = valAf.CantidadPasaportes
-            if(valAf.Afiliado){
-                navDesc.innerHTML = `FELICITACIONES Sr (a) Afiliado(a)`
-                msnAfiliado.classList.add('active')
+            if(valAf.Afiliado == 0){
+                navDesc.innerHTML = `FELICITACIONES Sr(a) empresario (a)`             
             }else{
-                navDesc.innerHTML = `¡FELICITACIONES!
-                <span><br>REGISTRO PROCESADO CON ÉXITO</span>`
+                navDesc.innerHTML = `¡Felicitaciones!  Sr (a) Afiliado(a)`
+                msnAfiliado.classList.add('active')
             }
             
             tabAtra.innerHTML = ''

@@ -9,6 +9,9 @@ use App\Models\Encuestas;
 use App\Models\Redimidos;
 use App\Models\Registros;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use Carbon\Carbon;
+use Datatables;
 
 class AfiliadosController extends Controller
 {
@@ -97,25 +100,66 @@ class AfiliadosController extends Controller
         $pasaportes = DB::select($sql1);
         $combos = DB::select($sql2);
 
-        return response()->json(['status' => true, 'afiliados' => $afiliado, 'inscritos' => $inscritos,'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1, 'pasaportes' => $pasaportes, 'combos' => $combos ]);
+        return response()->json(['status' => true, 'afiliados' => $afiliado, 'inscritos' => $inscritos,'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1, 'pasaportes' => $pasaportes, 'combos' => $combos ]);        
+    }    
 
-        // $data = [
-        //     'titulo' => 'Afiliados'
-        // ];
-        // // $pdf = \PDF::loadView('pdf', $data);
-        // // return $pdf->download('archivo.pdf');       
-        // // $datos = Datos::find($id);
+    public function update(Request $request){   
+        try {
+            if ($request != null){                
 
-        // //Descargar pdf de la vista
-        // $pdf =  \PDF::loadView('pdf', $data )
-        //          ->setPaper('letter', 'portrait');
-        //         // ->stream('informe.pdf');
+                $date = Carbon::now()->format('Y') . Carbon::now()->format('m') . Carbon::now()->format('d');
+                $hour = Carbon::now()->format('H') . Carbon::now()->format('i') . Carbon::now()->format('m');
 
-        // return $pdf->download('archivo.pdf');
+                $file = $request->file('datos');
+                $extension = $file->getClientOriginalExtension();
+                $fileName = $date.$hour.'.'.$extension;
+                             
+                $import = new Afiliados();                
+                $array = Excel::toArray($import, $request->file('datos'));                
+                $hiloString = [];                                
+                $i=6;
+                $cont = 0;                
+                foreach ($array[0] as $row) {                        
+                    foreach ($row as $clave => $valor) {
+                        array_push($hiloString, $valor);                            
+                    }                        
+                }                    
+                for ($i = 28; $i < count($hiloString); $i = $i + 7) {
+                    if ($hiloString[$i] <> null){                                
+                        $afiliado = Afiliados::where('Matricula',$hiloString[$i+1])->where('CodigoCCB',$hiloString[$i+2])->Count();                                
 
-        // // $html = Config::get("htmlAfiliados");        
-        // // $pdf = app('dompdf.wrapper');
-        // // $pdf->loadHTML($html);
-        // // return $pdf->download('miPDF.pdf');
+                        if ($afiliado == 0){                                    
+                            $afiliados = new Afiliados();
+                            $afiliados->Matricula = $hiloString[$i+1];
+                            $afiliados->CodigoCCB = $hiloString[$i+2];
+                            $afiliados->RazonSocial = $hiloString[$i+3];
+                            $afiliados->FechaRenovacion = null;
+                            if ($hiloString[$i+5] == "Si" || $hiloString[$i+5] == 1){
+                                $afiliados->Afiliado = 1;
+                            }else{
+                                $afiliados->Afiliado = 0;
+                            }
+                            $afiliados->CantidadPasaportes = $hiloString[$i+6];
+                            $afiliados->FechaCreacion = Carbon::now();
+                            $afiliados->FechaDescarga = null;
+                            $afiliados->FechaRedencion = null;
+                            $afiliados->save();
+                        }
+                    }
+                }
+            }                
+            $date = Carbon::now();
+            $afiliadosAll = Afiliados::whereDate('FechaCreacion',$date->toDateString())->get();
+
+            return response()->json(['status' => true, 'datos' =>  $afiliadosAll]);
+
+        } catch (Exception $e) {
+            return response()->json(['message' => $e], 500);
+        }       
+    }    
+    public function GetAfiliados(){ 
+        $date = Carbon::now();
+        $afiliadosAll = Afiliados::select('Matricula','CodigoCCB','RazonSocial','FechaRenovacion','Afiliado','CantidadPasaportes')->whereDate('FechaCreacion',$date->toDateString())->get();
+        return Datatables($afiliadosAll)->make(true);
     }
 }
