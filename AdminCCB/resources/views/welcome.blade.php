@@ -37,7 +37,7 @@
                 <div class="boxForm-group ">
                     <label for="codTrack" class="col-sm-2 col-form-label-sm">* Ingrese el código de seguridad mostrado en la imagen</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control inputValidate form-control-sm" id="codTrack" value="" pattern="[0-9]*">
+                        <input type="text" class="form-control inputValidate form-control-sm" id="codTrack" value="" >
                     </div>
                 </div>
             </div>
@@ -51,17 +51,17 @@
     
     <div class="modalRegister">
         <div class="modalRegister__content">
-            <p class="modalRegister__content--title">Se registro no se encuentra en nuestra base de datos</p>
+            <p class="modalRegister__content--title">Su registro no se encuentra en nuestra base de datos</p>
             <div class="boxInfo">
                 <p class="boxInfo--desc">Por favor verifique que:</p>
                 <ul class="boxInfo--items">
                     <li>El número de matrícula o inscripción no tenga puntos, comas ni ceros a la izquierda.</li>
-                    <li>Haya transcurrido <strong>cinco (5) días habiles</strong> de haber realizado el pago de la renovacion de su matrícula o inscripción para que pueda acceder a la plataforma de Mundo Aventura.</li>
+                    <li>Haya transcurrido <strong>cinco (5) días hábiles</strong> de haber realizado el pago de la renovación de su matrícula o inscripción para que pueda acceder a la plataforma de Mundo Aventura.</li>
                 </ul>
 
-                <p class="boxInfo--note"><strong>Importante: </strong>Los pasaportes CCB gratos <strong>NO aplican para agencias, sucursales ni establecimiento de comercio</strong>, únicamente aplican para personas naturales y jurídicas.</p>
+                <p class="boxInfo--note"><strong>Importante: </strong>Los pasaportes CCB gratis <strong>NO aplican para agencias, sucursales, ni establecimientos de comercio</strong>, únicamente aplican para personas naturales y jurídicas.</p>
             </div>
-            <p class="modalRegister__content--desc">Si tiene inconvenientes con la solicitud de sus pasaportes CCB, por favor escribenosal correo electronico <a href="mailto:judy.roso@ccb.org.co">judy.roso@ccb.org.co</a> relacionando el nombre de su empres y NIT.</p>
+            <p class="modalRegister__content--desc">Si tiene inconvenientes con la solicitud de sus pasaportes CCB, por favor escríbenos al correo electrónico <a href="mailto:maria.mendoza@ccb.org.co">maria.mendoza@ccb.org.co</a> relacionando el nombre de su empresa y NIT.</p>
 
             <p class="modalRegister__content--thanks"><strong>¡Gracias por su visita!</strong></p>
 

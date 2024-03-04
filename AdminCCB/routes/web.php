@@ -22,5 +22,8 @@ Route::get('/pdf', function () {
 Route::get('/form', function () {
     return view('formRegister');
 });
+Route::get('/frmUploadFile', function () {
+    return view('frmUploadFile');
+});
 
 // Route::get('afiliado/index', [AfiliadosController::class, 'index']);

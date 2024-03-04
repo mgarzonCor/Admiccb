@@ -90,9 +90,8 @@ function getData(){
             setccb.innerHTML = valAf.CodigoCCB
             setdoc.innerHTML = valIns.Documento
             cantPassText.innerHTML = valAf.CantidadPasaportes
-            
             if(valAf.Afiliado == 0){
-                navDesc.innerHTML = `FELICITACIONES Sr(a) empresario (a)`
+                navDesc.innerHTML = `FELICITACIONES Sr(a) empresario (a)`             
             }else{
                 navDesc.innerHTML = `¡Felicitaciones!  Sr (a) Afiliado(a)`
                 msnAfiliado.classList.add('active')
