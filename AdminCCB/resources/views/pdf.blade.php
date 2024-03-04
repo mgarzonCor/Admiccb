@@ -97,8 +97,8 @@
                 </div>
                 
                 <div class="boxCombos">
-                    <p class="boxCombos--title"><strong>Descuentos en combos de alimentos y bebidas:</strong></p>
-                    <p class="boxCombos--subtitle">Presentando su certificado de matrícula o inscripción en los kioscos al interior del parque Mundo Aventura puede adquirir los siguientes combos con espectaculares descuentos:</p>
+                    <p class="boxCombos--title" style="display:none"><strong>En combos de alimentos y bebidas:</strong></p>
+                    <p class="boxCombos--subtitle">Consulta al taquillero al momento de la redención por nuestro combo con espectacular descuento</p>
                     <ul class="listCombos">
                         <li class="listCombos--single"><strong>Combo perro + gaseosa 7 onz</strong></li>
                         <li class="listCombos--single"><strong>Combo pizza familiar: 6 porciones de pizza + 6 gaseosas 7 onzas </strong></li>
