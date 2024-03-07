@@ -137,7 +137,7 @@ function valid() {
             localStorage.setItem('5baa61e4', nmG.innerHTML)
             localStorage.setItem('7f83b1657ff1fc53', ccG.innerHTML)
             localStorage.setItem('5baa61e4werg', ced.value)
-            sendData(ixi.innerText,passFam.value,passInf.value,name.value,ced.value,nmG.innerText,phone.value,mail.value,cot,group1, group2)
+            sendData(ixi.innerText,passFam.value,passInf.value,name.value,ced.value,nmG.innerText,"","",cot,group1, group2)
         }
 
     })
@@ -231,8 +231,8 @@ function sendData(id,cantFam, cantInf, name, doc, mat, celular, mail, cr, ut, ho
     "test": name,
     "Documento": doc,
     "Matricula": mat,
-    "Celular": celular,
-    "Email": mail,
+    "Celular": "",
+    "Email": "",
     "CodigoRedencion": cr,
     "Utilidad": ut,
     "Hogar": ho
