@@ -133,7 +133,7 @@ class AfiliadosController extends Controller
                             $afiliados->Matricula = $hiloString[$i+1];
                             $afiliados->CodigoCCB = $hiloString[$i+2];
                             $afiliados->RazonSocial = $hiloString[$i+3];
-                            $afiliados->FechaRenovacion = null;
+                            $afiliados->FechaRenovacion = $hiloString[$i+4];
                             if ($hiloString[$i+5] == "Si" || $hiloString[$i+5] == 1){
                                 $afiliados->Afiliado = 1;
                             }else{
