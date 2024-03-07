@@ -73,7 +73,7 @@ function valid() {
 
         
         //Validacion datos pesonales
-        if(name.value == "" || ced.valid == "" || phone.value == "" || mail.value == "" || cofMail.value == ""){
+        if(name.value == "" || ced.valid == ""){
             valid1.forEach(function(el) {
                 if (el.value.trim() == '') {
                     el.classList.add('err');
@@ -82,10 +82,6 @@ function valid() {
                 }
             });
             modal('Los campos con (*) son obligatorios')
-        }else if(mail.value !== cofMail.value){
-            cofMail.classList.add('err')
-            cofMail.innerHTML = ""
-            modal('Los correos no coinciden')
         }else{
             flagData = true;
         }
@@ -229,7 +225,7 @@ function sendData(id,cantFam, cantInf, name, doc, mat, celular, mail, cr, ut, ho
     const bo = {
 
         
-    "Id_Afiliados": 4,
+    "Id_Afiliados": id,
     "CantidadFamiliar": cantFam,
     "CantidadInfantil": cantInf,
     "test": name,

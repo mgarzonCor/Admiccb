@@ -45,7 +45,7 @@
                                 <input type="text" class="form-control form-control-sm valid1 valAprovNum" id="cedula" value=""  maxlength="20">
                             </div>
                         </div>
-                        <div class="boxFormulario-group ">
+                        {{-- <div class="boxFormulario-group ">
                             <label for="telefono" class="col-sm-6 col-form-label-sm">* Teléfono</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm valid1 valAprovNum" id="telefono" value=""  maxlength="10">
@@ -62,7 +62,7 @@
                             <div class="col-sm-6">
                                 <input type="email" class="form-control form-control-sm valid1" id="confemail" value=""  >
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

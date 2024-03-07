@@ -126,7 +126,7 @@ class AfiliadosController extends Controller
                 }                    
                 for ($i = 28; $i < count($hiloString); $i = $i + 7) {
                     if ($hiloString[$i] <> null){                                
-                        $afiliado = Afiliados::where('Matricula',$hiloString[$i+1])->where('CodigoCCB',$hiloString[$i+2])->Count();                                
+                        $afiliado = Afiliados::where('Matricula',strval($hiloString[$i+1]))->where('CodigoCCB',$hiloString[$i+2])->Count();                                
 
                         if ($afiliado == 0){                                    
                             $afiliados = new Afiliados();

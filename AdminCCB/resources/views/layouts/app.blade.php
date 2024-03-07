@@ -11,7 +11,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         {{--  --}}
         <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/app-BPqsEqM0.css">
-        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/form-zI29IpHS.css">
+        <link rel="stylesheet" rel="stylesheet" type="text/css" href="/build/assets/form-DYUIoV5P.css">
 
 
         {{-- @vite(['public/css/app.scss', 'public/css/form.scss', 'public/js/app.js']) --}}
