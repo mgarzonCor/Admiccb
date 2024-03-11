@@ -77,7 +77,7 @@
                     <div class="boxInfantil__content">                        
                         <div class="boxInfantil__content--single"><strong>-</strong></div>
                         <div class="boxInfantil__content--single">-</div>
-                        <div class="boxInfantil__content--single">Cant. pasaporte <input type="number" class="valAprovNum valid2" id="passInf"></div>
+                        <div class="boxInfantil__content--single">Cant. pasaporte <input type="text" class=" valid2" id="passInf"></div>
                     </div>
                 </div>
                 <div class="boxAtencion">
@@ -88,7 +88,7 @@
                     <div class="boxFamiliar__content">
                         <div class="boxFamiliar__content--single"><strong>-</strong></div>
                         <div class="boxFamiliar__content--single">-</div>
-                        <div class="boxFamiliar__content--single">Cant. pasaporte <input type="number" class="valAprovNum valid2" id="passFam"></div>
+                        <div class="boxFamiliar__content--single">Cant. pasaporte <input type="text" class=" valid2" id="passFam"></div>
                     </div>
                 </div>
             </div>

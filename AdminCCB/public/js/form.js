@@ -2,28 +2,27 @@
     ccG;  
 
     getData()
-    valid()
+    valid()             
 document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 
 function valid() {
     const submit = document.querySelector('#follow'),
-    name = document.querySelector('#nombre'),
-    ced = document.querySelector('#cedula'),
-    phone = document.querySelector('#telefono'),
-    mail = document.querySelector('#email'),
-    cofMail = document.querySelector('#confemail'),
-    inputsText = document.querySelectorAll('.valAprovText'),
-    inputsNum = document.querySelectorAll('.valAprovNum'),
-    passRadio = document.querySelectorAll('input[name="first"'),
-    passHogar = document.querySelectorAll('input[name="second"'),
-    tyc = document.querySelector('#tyc');
-
+        name = document.querySelector('#nombre'),
+        ced = document.querySelector('#cedula'),
+        phone = document.querySelector('#telefono'),
+        mail = document.querySelector('#email'),
+        cofMail = document.querySelector('#confemail'),
+        inputsText = document.querySelectorAll('.valAprovText'),
+        inputsNum = document.querySelectorAll('.valAprovNum'),
+        passRadio = document.querySelectorAll('input[name="first"'),
+        passHogar = document.querySelectorAll('input[name="second"'),
+        tyc = document.querySelector('#tyc');
     let flagData = false,
-    flagPass = false,
-    flagRadio = false,
-    flagCheck = false;
+        flagPass = false,
+        flagRadio = false,
+        flagCheck = false;
 
     // Validacion que solo pueda ingresar texto
     inputsText.forEach(function(input) {
@@ -68,6 +67,15 @@ function valid() {
             group2;
 
         const passTot = Number(passInf.value) +  Number(passFam.value);
+        
+        if(passTot == cantPass.innerHTML && passInf.value == ''){
+            passInf.value = 0
+            passInf.classList.remove('err')
+        }else if(passTot == cantPass && passFam.value == ''){
+            passFam.value = 0
+            passFam.classList.remove('err')
+        }
+
         let group1Checked = false;
         let group2Checked = false;
 
@@ -95,7 +103,7 @@ function valid() {
                     el.classList.remove('err');
                 }
             });
-        }else if(passTot > cantPass.innerHTML){
+        }else if(passTot != cantPass.innerHTML){
             modal('La cantidad de pasaportes infantil y familiar no coinciden con la cantidad total')
         }else{
             flagPass = true;
@@ -194,6 +202,19 @@ function getData(){
                 
                 generarContenidoHTML(jbic, vjbic, bic, 'passInf');
                 generarContenidoHTML(jbfc, vjbfc, bfc, 'passFam');
+
+                const inputsNum1 = document.querySelectorAll('.valAprovNum');                    
+                    // Validacion que solo pueda ingresar numeros
+                    inputsNum1.forEach(function(input1) {
+                        input1.addEventListener('input', function(event) {
+                            var valorInput1 = input1.value;
+                            var regex = /^[0-9]*$/;
+
+                            if (!regex.test(valorInput1)) {
+                                input1.value = input1.value.replace(/[^0-9]/g, '');
+                            }
+                        });
+                    });
             }
         })
     }else{
@@ -213,7 +234,7 @@ function generarContenidoHTML(elemento, valor, destino, idInput) {
     });
 
     destino.innerHTML += `
-        <div class="boxInfantil__content--single">Cant. pasaporte <input type="number" class="valAprovNum valid2" id="${idInput}"></div>
+        <div class="boxInfantil__content--single">Cant. pasaporte <input type="text" class="valAprovNum valid2" id="${idInput}" maxlength="2"></div>
     `;
 }
 

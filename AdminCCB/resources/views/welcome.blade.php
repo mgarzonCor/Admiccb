@@ -56,7 +56,7 @@
                 <p class="boxInfo--desc">Por favor verifique que:</p>
                 <ul class="boxInfo--items">
                     <li>El número de matrícula o inscripción no tenga puntos, comas ni ceros a la izquierda.</li>
-                    <li>Haya transcurrido <strong>cinco (5) días hábiles</strong> de haber realizado el pago de la renovación de su matrícula o inscripción para que pueda acceder a la plataforma de Mundo Aventura.</li>
+                    <li>Haya transcurrido <strong>quince (15) días hábiles</strong> de haber realizado el pago de la renovación de su matrícula o inscripción para que pueda acceder a la plataforma de Mundo Aventura.</li>
                 </ul>
 
                 <p class="boxInfo--note"><strong>Importante: </strong>Los pasaportes CCB gratis <strong>NO aplican para agencias, sucursales, ni establecimientos de comercio</strong>, únicamente aplican para personas naturales y jurídicas.</p>
