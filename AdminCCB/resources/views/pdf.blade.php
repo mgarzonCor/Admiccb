@@ -71,8 +71,8 @@
                             </div>
                         </div>
                     </div>
-                    <p class="boxAtracciones__note" style="font-style: normal;">(Las atracciones podrán cambiar sin previo aviso y serán reemplazadas por similares)</p>
-                    <p class="boxAtracciones__date"><strong>Fechas de redención:</strong> En los horarios habituales del parque a partir del 09 de marzo hasta el 7 de junio de 2024</p>
+                    <p class="boxAtracciones__note" style="font-style: normal;">(Atracciones sujetas a restricción por fuerza mayor o mantenimiento)</p>
+                    <p class="boxAtracciones__date"><strong>Fechas de redención:</strong> En los horarios habituales del parque a partir del 24 de junio hasta el 09 de diciembre de 2024</p>
                 </div>
 
                 <div class="boxPasaportes">
@@ -103,7 +103,7 @@
                         <li class="listCombos--single"><strong>Combo perro + gaseosa 7 onz</strong></li>
                         <li class="listCombos--single"><strong>Combo pizza familiar: 6 porciones de pizza + 6 gaseosas 7 onzas </strong></li>
                     </ul>
-                    <p class="boxCombos__afiliados"><strong>Pregunta al taquillero por el 2x1 en nuestras atracciones de alto impacto.</strong></p>
+                    {{-- <p class="boxCombos__afiliados"><strong>Pregunta al taquillero por el 2x1 en nuestras atracciones de alto impacto.</strong></p> --}}
                 </div>
 
                 <div class="boxRecomendaciones">

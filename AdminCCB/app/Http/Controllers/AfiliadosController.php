@@ -32,7 +32,7 @@ class AfiliadosController extends Controller
             return response()->json(['status' => true, 'afiliados' => $afiliado, 'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1]);
 
         } catch (\Throwable $th) {            
-            return response()->json(['status' => false, 'error' => 'Error al cosultar con la base de datos']);
+            return response()->json(['status' => false, 'error' => $th]);
         }
     }
 
@@ -99,6 +99,11 @@ class AfiliadosController extends Controller
         $sql2 = "select p.Nombre as Pasaporte,CASE p.Nombre WHEN 'PASAPORTE KIDS' THEN 21 WHEN 'PASAPORTE SILVER' THEN 28 WHEN 'PASAPORTE GOLD' THEN 33 ELSE 0 END as Atracciones, CONCAT(c.Porcentaje,'%') as Descuento, c.Valor from TB_Convenio conv inner join TB_ConvenioDetalle c on conv.IdConvenio = c.IdConvenio inner join TB_Producto p on c.CodSapProducto=p.CodigoSap where conv.Nombre like '%Descuentos CCB%' and p.Nombre like '%combo%'";        
         $pasaportes = DB::select($sql1);
         $combos = DB::select($sql2);
+        
+        $up = Afiliados::where('Matricula',$Matricula)->where('CodigoCCB',$CodigoCCB)
+            ->update([
+            'estado' => 2,
+            ]);
 
         return response()->json(['status' => true, 'afiliados' => $afiliado, 'inscritos' => $inscritos,'familairTipo2' => $familairTipo2, 'infantilTipo1' => $infantilTipo1, 'pasaportes' => $pasaportes, 'combos' => $combos ]);        
     }    
@@ -123,7 +128,7 @@ class AfiliadosController extends Controller
                     foreach ($row as $clave => $valor) {
                         array_push($hiloString, $valor);                            
                     }                        
-                }                    
+                }     
                 for ($i = 28; $i < count($hiloString); $i = $i + 7) {
                     if ($hiloString[$i] <> null){                                
                         $afiliado = Afiliados::where('Matricula',strval($hiloString[$i+1]))->where('CodigoCCB',$hiloString[$i+2])->Count();                                
@@ -133,7 +138,7 @@ class AfiliadosController extends Controller
                             $afiliados->Matricula = $hiloString[$i+1];
                             $afiliados->CodigoCCB = $hiloString[$i+2];
                             $afiliados->RazonSocial = $hiloString[$i+3];
-                            $afiliados->FechaRenovacion = $hiloString[$i+4];
+                            $afiliados->FechaRenovacion = Carbon::parse($hiloString[$i+4]);
                             if ($hiloString[$i+5] == "Si" || $hiloString[$i+5] == 1){
                                 $afiliados->Afiliado = 1;
                             }else{
@@ -161,5 +166,27 @@ class AfiliadosController extends Controller
         $date = Carbon::now();
         $afiliadosAll = Afiliados::select('Matricula','CodigoCCB','RazonSocial','FechaRenovacion','Afiliado','CantidadPasaportes')->whereDate('FechaCreacion',$date->toDateString())->get();
         return Datatables($afiliadosAll)->make(true);
+    }
+
+    public function CodigosRedencion($redencion){
+        try {            
+            $codRedencion = Inscritos::where('CodigoRedencion',$redencion)->where('Estado','1')->first();
+            
+            if($codRedencion == null){
+                return response()->json(['status' => false, 'msn' => 'Ya fue redimido']);
+            }else{
+
+                $codigo = $codRedencion->CodigoRedencion;
+                $upCodigo = Inscritos::where('CodigoRedencion',$redencion)
+                    ->update([
+                        'Estado' => 2,
+                    ]);
+                return response()->json(['status' => true, 'CodigoRedencion' => $codigo]);
+            }
+
+        } catch (\Throwable $th) {            
+            return response()->json(['status' => false, 'error' => $th]);
+        }
+
     }
 }

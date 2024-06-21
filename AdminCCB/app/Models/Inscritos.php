@@ -9,5 +9,5 @@ class Inscritos extends Model
 {
     protected $table = 'TB_InscritosCCB';
     protected $primaryKey = 'IdInscritos';
-    protected $fillable = ['Id_Afiliados','CantidadFamiliar','CantidadInfantil','Nombre','Documento','Matricula','Celular','Email','CodigoRedencion','FechaCreacion'];
+    protected $fillable = ['Id_Afiliados','CantidadFamiliar','CantidadInfantil','Nombre','Documento','Matricula','Celular','Email','CodigoRedencion','FechaCreacion','Estado'];
 }

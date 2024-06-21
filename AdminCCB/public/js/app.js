@@ -86,12 +86,20 @@ function valid() {
             fetch(`/api/afiliado/${codMat.value}/${codC.value}`)
             .then(response => response.json())
             .then(json => {
-                console.log(json);
+                console.log(json,'aqui');
                 if(json.afiliados === "No se encontró ningún registro con esos parámetros") modal.classList.add('show')
                 if(json.status){
-                    localStorage.setItem('5baa61e4', codMat.value);
-                    localStorage.setItem('7f83b1657ff1fc53', codC.value);
-                    window.location.href = '/form'
+                    if(json.afiliados.estado == 2){
+                        document.querySelector('.modalRegister__content--title').innerHTML = 'Esta matrícula ha sido redimida.'
+                        document.querySelector('.boxInfo').style.display = "none"
+                        document.querySelector('.modalRegister__content--desc').style.display = "none"
+                        document.querySelector('.modalRegister__content--thanks').style.display = "none"
+                        modal.classList.add('show')
+                    }else{
+                        localStorage.setItem('5baa61e4', codMat.value);
+                        localStorage.setItem('7f83b1657ff1fc53', codC.value);
+                        window.location.href = '/form'
+                    }
                 }
             })
             .catch(error => {

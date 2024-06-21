@@ -32,4 +32,7 @@ Route::post('/guardarInscritos', [AfiliadosController::class, 'store']);
 
 Route::post('/uploadFile', [AfiliadosController::class, 'update']);
 
+Route::get('/getCodigoRedencion/{redencion}', [AfiliadosController::class, 'CodigosRedencion']);
+
+
 // Route::get('/guardarInscritos', [AfiliadosController::class, 'guardar']);

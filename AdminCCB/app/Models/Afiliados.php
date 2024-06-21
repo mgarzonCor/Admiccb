@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Afiliados extends Model
 {
-    protected $table = 'TB_AfiliadosCCB';
+    protected $table = 'tb_afiliadosccb';
     protected $primaryKey = 'Id_Afiliado';
-    protected $fillable = ['Matricula', 'CodigoCCB','RazonSocial','FechaRenovacion','Afiliado','CantidadPasaportes','FechaCreacion','FechaDescarga','FechaRedencion'];    
+    protected $fillable = ['Matricula', 'CodigoCCB','RazonSocial','FechaRenovacion','Afiliado','CantidadPasaportes','FechaCreacion','FechaDescarga','FechaRedencion','estado'];    
 }

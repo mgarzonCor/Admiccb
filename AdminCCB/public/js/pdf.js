@@ -3,45 +3,6 @@ let resolution = window.innerWidth;
 document.addEventListener("DOMContentLoaded", (event) => {
     getData()
     date()
-    
-    setTimeout(() => {
-        const ced = localStorage.getItem('5baa61e4werg')
-        const pageElement = document.body;
-
-        if( resolution <= 767){
-            // // Configura las opciones para la generación del PDF
-            const options = {
-                filename: `${ced}.pdf`, // Nombre del archivo PDF
-                image: { type: 'jpeg', quality: 0.98 }, // Tipo de imagen y calidad
-                html2canvas: { scale: 2 }, // Escala del lienzo HTML2Canvas
-                jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait'}, // Configuración de jsPDF
-                // pagebreak: { mode: 'avoid-all', avoid: 'img' }
-            };
-    
-            // // Genera el PDF con html2pdf
-            html2pdf().set(options).from(pageElement).save()
-        }else{      
-            const { jsPDF } = window.jspdf;
-            html2canvas(document.body, {
-                onrendered: function(canvas) {                 
-                    var pdfData = canvas.toDataURL("image/png");                
-                    var doc = new jsPDF("p", "mm", "letter");
-                    var width = doc.internal.pageSize.getWidth();
-                    var height = doc.internal.pageSize.getHeight();
-                    doc.addImage(pdfData, 'JPEG', 0, 0, width, height);
-                    doc.save(`${ced}.pdf`);
-                    console.log('PDF generated successfully.');
-                }            
-            });
-        }
-        
-        // localStorage.removeItem('5baa61e4')
-        // localStorage.removeItem('7f83b1657ff1fc53')
-        // localStorage.removeItem('5baa61e4werg')
-
-    }, 1500);
-
-
 });
 
 function date(){
@@ -95,7 +56,7 @@ function getData(){
                 navDesc.innerHTML = `FELICITACIONES Sr(a) Empresario (a)`             
             }else{
                 navDesc.innerHTML = `¡Felicitaciones!  Sr (a) Afiliado(a)`
-                msnAfiliado.classList.add('active')
+                msnAfiliado && msnAfiliado.classList.add('active')
             }
             
             tabAtra.innerHTML = ''
@@ -154,6 +115,43 @@ function getData(){
                 colorLight : '#ffffff', // Color de los módulos claros
                 correctLevel : QRCode.CorrectLevel.H// Nivel de corrección de errores
             });
+
+            setTimeout(() => {
+                const ced = localStorage.getItem('5baa61e4werg')
+                const pageElement = document.body;
+        
+                if( resolution <= 767){
+                    // // Configura las opciones para la generación del PDF
+                    const options = {
+                        filename: `${ced}.pdf`, // Nombre del archivo PDF
+                        image: { type: 'jpeg', quality: 0.98 }, // Tipo de imagen y calidad
+                        html2canvas: { scale: 2 }, // Escala del lienzo HTML2Canvas
+                        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait'}, // Configuración de jsPDF
+                        // pagebreak: { mode: 'avoid-all', avoid: 'img' }
+                    };
+            
+                    // // Genera el PDF con html2pdf
+                    html2pdf().set(options).from(pageElement).save()
+                }else{      
+                    const { jsPDF } = window.jspdf;
+                    html2canvas(document.body, {
+                        onrendered: function(canvas) {                 
+                            var pdfData = canvas.toDataURL("image/png");                
+                            var doc = new jsPDF("p", "mm", "letter");
+                            var width = doc.internal.pageSize.getWidth();
+                            var height = doc.internal.pageSize.getHeight();
+                            doc.addImage(pdfData, 'JPEG', 0, 0, width, height);
+                            doc.save(`${ced}.pdf`);
+                            console.log('PDF generated successfully.');
+                        }            
+                    });
+                }
+                
+                localStorage.removeItem('5baa61e4')
+                localStorage.removeItem('7f83b1657ff1fc53')
+                localStorage.removeItem('5baa61e4werg')
+        
+            }, 1500);
 
             // console.log(json);
         })
