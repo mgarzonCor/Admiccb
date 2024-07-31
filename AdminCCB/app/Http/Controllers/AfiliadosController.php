@@ -170,22 +170,14 @@ class AfiliadosController extends Controller
 
     public function CodigosRedencion($redencion){
         try {            
-            $codRedencion = Inscritos::where('CodigoRedencion',$redencion)->where('Estado','1')->first();
-            
-            if($codRedencion == null){
-                return response()->json(['status' => false, 'msn' => 'Ya fue redimido']);
-            }else{
-
-                $codigo = $codRedencion->CodigoRedencion;
-                $upCodigo = Inscritos::where('CodigoRedencion',$redencion)
-                    ->update([
-                        'Estado' => 2,
-                    ]);
-                return response()->json(['status' => true, 'CodigoRedencion' => $codigo]);
+            $codRedencion = Inscritos::where('CodigoRedencion',$redencion)->first();
+            $codigo = $codRedencion->CodigoRedencion;
+            if($codigo){
+                return response()->json(['status' => true]);
             }
 
         } catch (\Throwable $th) {            
-            return response()->json(['status' => false, 'error' => $th]);
+            return response()->json(['status' => false, 'msn' => $th]);
         }
 
     }

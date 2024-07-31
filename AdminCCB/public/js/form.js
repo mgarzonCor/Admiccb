@@ -140,7 +140,7 @@ function valid() {
         //Se valida si todo los campos estan correctamente diligenciados
         if(flagData && flagPass && flagRadio ){
             //Todo bien
-            const cot = nmG.innerText+ccG.innerHTML
+            const cot = 'CCB'+nmG.innerText+ccG.innerHTML
             submit.setAttribute('disabled','true')
             localStorage.setItem('5baa61e4', nmG.innerHTML)
             localStorage.setItem('7f83b1657ff1fc53', ccG.innerHTML)

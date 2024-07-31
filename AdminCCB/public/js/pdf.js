@@ -98,7 +98,7 @@ function getData(){
             })
 
             var qrcodeContainer = document.getElementById('qrcode');
-            const setCat = valAf.Matricula+valAf.CodigoCCB
+            const setCat = 'CCB'+valAf.Matricula+valAf.CodigoCCB
 
             // Crear una instancia de QRCode.js y generar el código QR
             let widthWR = 100
